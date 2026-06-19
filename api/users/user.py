@@ -26,18 +26,27 @@ def get_refresh_token(token:str):
 def create_user(user:user_schemas.CreateUser,session=Depends(get_session)):
     return create_user_service(user,session)
 
-@user_route.put('/user/update/{id}')
-def update_user(id,user:user_schemas.UpdateUser,session=Depends(get_session)):
-    return update_user_service(id,user,session)
+@user_route.put('/user/update')
+def update_user(request:Request,id,user:user_schemas.UpdateUser,session=Depends(get_session)):
+    data = request.state.current_user
+    email = data.get('email')
+    return update_user_service(email,user,session)
 
-@user_route.delete('/user/delete/{id}')
-def delete_user(id,session=Depends(get_session)):
-    return delete_user_service(id,session)
+@user_route.delete('/user/delete')
+def delete_user(request:Request,session=Depends(get_session)):
+    data = request.state.current_user
+    email = data.get('email')
+    return delete_user_service(email,session)
 
 @user_route.get('/users')
-def get_users(session=Depends(get_session)):
+def get_users(request:Request,session=Depends(get_session)):
+    # data = request.state.current_user
+    # print(data.get('email'))
+    # print(data.get('role'))
     return get_users_service(session)
 
-@user_route.get('/user/{id}')
+@user_route.get('/user')
 def get_user(request:Request,id,session=Depends(get_session)):
-    return get_user_service(id,session)
+    data = request.state.current_user
+    email = data.get('email')
+    return get_user_service(email,session)

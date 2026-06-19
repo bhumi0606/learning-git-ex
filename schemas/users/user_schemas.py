@@ -10,10 +10,7 @@ class CreateUser(BaseModel):
 
 class UpdateUser(BaseModel):
     name: str
-    email: str
-
 
 class TokenData(BaseModel):
     email: str
     role: str
-

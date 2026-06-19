@@ -17,15 +17,16 @@ def delete_account(id,session):
     session.commit()    
     return "account deleted"
 
-def check_balance(account_number,session):
-    acc = session.query(Account.balance).filter_by(account_number=account_number).one_or_none()
-    return acc[0]
+def check_balance(user_id,session):
+    acc = session.query(Account).filter_by(user_id=user_id).one_or_none()
+    return acc
 
-def deposit(account_number,amount,session):
-    acc = session.query(Account).filter_by(account_number=account_number).one_or_none()
+def deposit(user_id,amount,session):
+    acc = session.query(Account).filter_by(user_id=user_id).one_or_none()
+    print(acc)
     acc.balance += amount
     session.commit()
-    return acc.balance
+    return acc
 
 def withdraw(account_number,amount,session):
     acc = session.query(Account.balance).filter_by(account_number=account_number).one_or_none()
@@ -46,3 +47,7 @@ def get_account(acc_no,session):
     if acc:
         return acc.account_number
     return None
+
+def get_account_by_userid(user_id,session):
+    acc = session.query(Account.account_number).filter_by(user_id=user_id).one_or_none()
+    return acc[0]

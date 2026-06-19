@@ -11,18 +11,16 @@ def add_user(user,session):
     session.commit()
     return "user created."
 
-def update_user(id,u,session):
-    user = session.query(User).filter_by(id=id).one_or_none()
+def update_user(email,u,session):
+    user = session.query(User).filter_by(email=email).one_or_none()
     if user:
         if u.name:
             user.name = u.name
-        if u.email:
-            user.email = u.email
         session.commit()
         return "user updated."
 
-def delete_user(id,session):
-    user = session.query(User).filter_by(id=id).one_or_none()
+def delete_user(email,session):
+    user = session.query(User).filter_by(email=email).one_or_none()
     if user:
         session.delete(user)
         session.commit()
@@ -32,10 +30,10 @@ def show_users(session):
     users = session.query(User).all()
     return users
 
-def show_user(id,session):
-    user = session.query(User).filter_by(id=id).one_or_none()
+def show_user(email,session):
+    user = session.query(User).filter_by(email=email).one_or_none()
     return user
 
-def get_user_by_email(email,session):
-    user = session.query(User).filter_by(email=email).one_or_none()
+def get_user_by_id(id,session):
+    user = session.query(User).filter_by(id=id).one_or_none()
     return user

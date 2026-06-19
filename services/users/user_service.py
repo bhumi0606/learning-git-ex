@@ -1,4 +1,4 @@
-from repo.users.user_repo import add_user, update_user, delete_user, show_users, show_user, get_user_by_email
+from repo.users.user_repo import add_user, update_user, delete_user, show_users, show_user
 from passlib.context import CryptContext
 from schemas.users import user_schemas
 from core.authentication import create_access_token
@@ -10,7 +10,7 @@ password_context = CryptContext(
 
 def get_access_token_service(email,password,session):
     try:
-        user = get_user_by_email(email,session)
+        user = show_user(email,session)
         if user and password_context.verify(password,user.password):
             data = user_schemas.TokenData(
                 email = email,
@@ -35,18 +35,18 @@ def create_user_service(user,session):
     except Exception as e:
         raise Exception(str(e))
     
-def update_user_service(id,user,session):
+def update_user_service(email,user,session):
     try:
-        msg = update_user(id,user,session)
+        msg = update_user(email,user,session)
         if msg:
             return msg
         raise Exception("user not updated")
     except Exception as e:
         raise Exception(str(e))
 
-def delete_user_service(id,session):
+def delete_user_service(email,session):
     try:
-        msg = delete_user(id,session)
+        msg = delete_user(email,session)
         if msg:
             return msg
         raise Exception("user not deleted")
@@ -62,11 +62,21 @@ def get_users_service(session):
     except Exception as e:
         raise Exception(str(e))
 
-def get_user_service(id,session):
+def get_user_service(email,session):
     try:
-        user = show_user(id,session)
+        user = show_user(email,session)
         if user:
             return user
         raise Exception("user not found")
     except Exception as e:
         raise Exception(str(e))
+
+def get_user_by_id_service(id,session):
+    try:
+        user = get_user_by_id(id,session)
+        if user:
+            return user
+        raise Exception("user not found")
+    except Exception as e:
+        raise Exception(str(e))
+        

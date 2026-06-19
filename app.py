@@ -11,6 +11,6 @@ app = FastAPI()
 
 app.add_exception_handler(Exception,exception_handler)
 app.add_exception_handler(RateLimitExceeded,exception_handler)
-# app.middleware("http")(token_verify)
+app.middleware("http")(token_verify)
 app.include_router(user_route)
 app.include_router(account_route)

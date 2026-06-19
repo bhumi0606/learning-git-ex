@@ -3514,3 +3514,2219 @@ Traceback (most recent call last):
   File "D:\Python Basic Internship\alembic\Mini Project 2\services\accounts\account_service.py", line 69, in transfer_service
     raise Exception(str(e))
 Exception: Insufficient balance
+2026-06-18 17:51:44,346 | INFO | decorators.logging_decorator | API Called:login 
+2026-06-18 17:51:46,529 | INFO | decorators.logging_decorator | API finished:login 
+2026-06-18 17:51:46,530 | INFO | decorators.logging_decorator | API Process time:2.182402800000091 
+2026-06-18 17:53:37,325 | ERROR | exception_handler | Exception: POST http://127.0.0.1:8000/user/create name 'e' is not defined 
+  + Exception Group Traceback (most recent call last):
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 81, in collapse_excgroups
+  |     yield
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 192, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\_backends\_asyncio.py", line 799, in __aexit__
+  |     raise BaseExceptionGroup(
+  | exceptiongroup.ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    |     await self.app(scope, receive, _send)
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    |     with recv_stream, send_stream, collapse_excgroups():
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    |     self.gen.throw(typ, value, traceback)
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    |     raise exc
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |   File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 29, in token_verify
+    |     raise Exception(str(e))
+    | NameError: name 'e' is not defined
+    +------------------------------------
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 29, in token_verify
+    raise Exception(str(e))
+NameError: name 'e' is not defined
+2026-06-18 17:54:00,573 | ERROR | exception_handler | Exception: POST http://127.0.0.1:8000/user/create Invalid token type. Token must be a <class 'bytes'> 
+  + Exception Group Traceback (most recent call last):
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 81, in collapse_excgroups
+  |     yield
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 192, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\_backends\_asyncio.py", line 799, in __aexit__
+  |     raise BaseExceptionGroup(
+  | exceptiongroup.ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    |     await self.app(scope, receive, _send)
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    |     with recv_stream, send_stream, collapse_excgroups():
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    |     self.gen.throw(typ, value, traceback)
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    |     raise exc
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |   File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 29, in token_verify
+    |     raise Exception(str(e))
+    | Exception: Invalid token type. Token must be a <class 'bytes'>
+    +------------------------------------
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 29, in token_verify
+    raise Exception(str(e))
+Exception: Invalid token type. Token must be a <class 'bytes'>
+2026-06-18 17:54:12,616 | INFO | decorators.logging_decorator | API Called:login 
+2026-06-18 17:54:15,133 | INFO | decorators.logging_decorator | API finished:login 
+2026-06-18 17:54:15,134 | INFO | decorators.logging_decorator | API Process time:2.517378699999881 
+2026-06-18 17:54:20,184 | ERROR | exception_handler | Exception: POST http://127.0.0.1:8000/user/create Invalid token type. Token must be a <class 'bytes'> 
+  + Exception Group Traceback (most recent call last):
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 81, in collapse_excgroups
+  |     yield
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 192, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\_backends\_asyncio.py", line 799, in __aexit__
+  |     raise BaseExceptionGroup(
+  | exceptiongroup.ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    |     await self.app(scope, receive, _send)
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    |     with recv_stream, send_stream, collapse_excgroups():
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    |     self.gen.throw(typ, value, traceback)
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    |     raise exc
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |   File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 29, in token_verify
+    |     raise Exception(str(e))
+    | Exception: Invalid token type. Token must be a <class 'bytes'>
+    +------------------------------------
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 29, in token_verify
+    raise Exception(str(e))
+Exception: Invalid token type. Token must be a <class 'bytes'>
+2026-06-19 10:58:47,343 | ERROR | exception_handler | Exception: POST http://127.0.0.1:8000/login?=&= Invalid token type. Token must be a <class 'bytes'> 
+  + Exception Group Traceback (most recent call last):
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 81, in collapse_excgroups
+  |     yield
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 192, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\_backends\_asyncio.py", line 799, in __aexit__
+  |     raise BaseExceptionGroup(
+  | exceptiongroup.ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    |     await self.app(scope, receive, _send)
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    |     with recv_stream, send_stream, collapse_excgroups():
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    |     self.gen.throw(typ, value, traceback)
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    |     raise exc
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |   File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 29, in token_verify
+    |     raise Exception(str(e))
+    | Exception: Invalid token type. Token must be a <class 'bytes'>
+    +------------------------------------
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 29, in token_verify
+    raise Exception(str(e))
+Exception: Invalid token type. Token must be a <class 'bytes'>
+2026-06-19 11:00:25,380 | INFO | decorators.logging_decorator | API Called:login 
+2026-06-19 11:00:26,929 | INFO | decorators.logging_decorator | API finished:login 
+2026-06-19 11:00:26,930 | INFO | decorators.logging_decorator | API Process time:1.5488901000001079 
+2026-06-19 11:01:30,090 | ERROR | exception_handler | Exception: GET http://127.0.0.1:8000/users Invalid token type. Token must be a <class 'bytes'> 
+  + Exception Group Traceback (most recent call last):
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 81, in collapse_excgroups
+  |     yield
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 192, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\_backends\_asyncio.py", line 799, in __aexit__
+  |     raise BaseExceptionGroup(
+  | exceptiongroup.ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    |     await self.app(scope, receive, _send)
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    |     with recv_stream, send_stream, collapse_excgroups():
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    |     self.gen.throw(typ, value, traceback)
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    |     raise exc
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |   File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 29, in token_verify
+    |     raise Exception(str(e))
+    | Exception: Invalid token type. Token must be a <class 'bytes'>
+    +------------------------------------
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 29, in token_verify
+    raise Exception(str(e))
+Exception: Invalid token type. Token must be a <class 'bytes'>
+2026-06-19 11:02:09,434 | ERROR | exception_handler | Exception: GET http://127.0.0.1:8000/users Invalid token type. Token must be a <class 'bytes'> 
+  + Exception Group Traceback (most recent call last):
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 81, in collapse_excgroups
+  |     yield
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 192, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\_backends\_asyncio.py", line 799, in __aexit__
+  |     raise BaseExceptionGroup(
+  | exceptiongroup.ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    |     await self.app(scope, receive, _send)
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    |     with recv_stream, send_stream, collapse_excgroups():
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    |     self.gen.throw(typ, value, traceback)
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    |     raise exc
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |   File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 29, in token_verify
+    |     raise Exception(str(e))
+    | Exception: Invalid token type. Token must be a <class 'bytes'>
+    +------------------------------------
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 29, in token_verify
+    raise Exception(str(e))
+Exception: Invalid token type. Token must be a <class 'bytes'>
+2026-06-19 11:03:16,681 | ERROR | exception_handler | Exception: GET http://127.0.0.1:8000/users Invalid token type. Token must be a <class 'bytes'> 
+  + Exception Group Traceback (most recent call last):
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 81, in collapse_excgroups
+  |     yield
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 192, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\_backends\_asyncio.py", line 799, in __aexit__
+  |     raise BaseExceptionGroup(
+  | exceptiongroup.ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    |     await self.app(scope, receive, _send)
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    |     with recv_stream, send_stream, collapse_excgroups():
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    |     self.gen.throw(typ, value, traceback)
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    |     raise exc
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |   File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 29, in token_verify
+    |     raise Exception(str(e))
+    | Exception: Invalid token type. Token must be a <class 'bytes'>
+    +------------------------------------
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 29, in token_verify
+    raise Exception(str(e))
+Exception: Invalid token type. Token must be a <class 'bytes'>
+2026-06-19 11:04:29,288 | INFO | decorators.logging_decorator | API Called:login 
+2026-06-19 11:04:30,342 | INFO | decorators.logging_decorator | API finished:login 
+2026-06-19 11:04:30,342 | INFO | decorators.logging_decorator | API Process time:1.0535922999999912 
+2026-06-19 11:05:04,248 | ERROR | exception_handler | Exception: GET http://127.0.0.1:8000/users Signature verification failed 
+  + Exception Group Traceback (most recent call last):
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 81, in collapse_excgroups
+  |     yield
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 192, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\_backends\_asyncio.py", line 799, in __aexit__
+  |     raise BaseExceptionGroup(
+  | exceptiongroup.ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    |     await self.app(scope, receive, _send)
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    |     with recv_stream, send_stream, collapse_excgroups():
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    |     self.gen.throw(typ, value, traceback)
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    |     raise exc
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |   File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 29, in token_verify
+    |     raise Exception(str(e))
+    | Exception: Signature verification failed
+    +------------------------------------
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 29, in token_verify
+    raise Exception(str(e))
+Exception: Signature verification failed
+2026-06-19 11:05:17,178 | ERROR | exception_handler | Exception: GET http://127.0.0.1:8000/users Not enough segments 
+  + Exception Group Traceback (most recent call last):
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 81, in collapse_excgroups
+  |     yield
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 192, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\_backends\_asyncio.py", line 799, in __aexit__
+  |     raise BaseExceptionGroup(
+  | exceptiongroup.ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    |     await self.app(scope, receive, _send)
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    |     with recv_stream, send_stream, collapse_excgroups():
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    |     self.gen.throw(typ, value, traceback)
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    |     raise exc
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |   File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 29, in token_verify
+    |     raise Exception(str(e))
+    | Exception: Not enough segments
+    +------------------------------------
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 29, in token_verify
+    raise Exception(str(e))
+Exception: Not enough segments
+2026-06-19 11:06:42,045 | INFO | decorators.logging_decorator | API Called:login 
+2026-06-19 11:06:45,290 | INFO | decorators.logging_decorator | API finished:login 
+2026-06-19 11:06:45,290 | INFO | decorators.logging_decorator | API Process time:3.241414000000077 
+2026-06-19 11:10:57,901 | INFO | decorators.logging_decorator | API Called:login 
+2026-06-19 11:10:58,455 | INFO | decorators.logging_decorator | API finished:login 
+2026-06-19 11:10:58,455 | INFO | decorators.logging_decorator | API Process time:0.5531089999999494 
+2026-06-19 11:11:48,932 | INFO | decorators.logging_decorator | API Called:login 
+2026-06-19 11:11:49,620 | INFO | decorators.logging_decorator | API finished:login 
+2026-06-19 11:11:49,620 | INFO | decorators.logging_decorator | API Process time:0.6875092000000222 
+2026-06-19 11:34:06,902 | ERROR | exception_handler | Exception: GET http://127.0.0.1:8000/favicon.ico Invalid token type. Token must be a <class 'bytes'> 
+  + Exception Group Traceback (most recent call last):
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 81, in collapse_excgroups
+  |     yield
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 192, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\_backends\_asyncio.py", line 799, in __aexit__
+  |     raise BaseExceptionGroup(
+  | exceptiongroup.ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    |     await self.app(scope, receive, _send)
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    |     with recv_stream, send_stream, collapse_excgroups():
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    |     self.gen.throw(typ, value, traceback)
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    |     raise exc
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |   File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 30, in token_verify
+    |     raise Exception(str(e))
+    | Exception: Invalid token type. Token must be a <class 'bytes'>
+    +------------------------------------
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 30, in token_verify
+    raise Exception(str(e))
+Exception: Invalid token type. Token must be a <class 'bytes'>
+2026-06-19 11:38:16,222 | ERROR | exception_handler | Exception: POST http://127.0.0.1:8000/account/create name 'e' is not defined 
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UndefinedFunction: operator does not exist: character varying = integer
+LINE 3: WHERE users.email = 1
+                          ^
+HINT:  No operator matches the given name and argument types. You might need to add explicit type casts.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Python Basic Internship\alembic\Mini Project 2\services\accounts\account_service.py", line 6, in create_account_service
+    user = show_user(account.user_id,session)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\repo\users\user_repo.py", line 34, in show_user
+    user = session.query(User).filter_by(email=email).one_or_none()
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\query.py", line 2792, in one_or_none
+    return self._iter().one_or_none()  # type: ignore
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\query.py", line 2864, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\session.py", line 2372, in execute
+    return self._execute_internal(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\session.py", line 2270, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\context.py", line 306, in orm_execute_statement
+    result = conn.execute(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 1421, in execute
+    return meth(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\sql\elements.py", line 526, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 1643, in _execute_clauseelement
+    ret = self._execute_context(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 2365, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedFunction) operator does not exist: character varying = integer
+LINE 3: WHERE users.email = 1
+                          ^
+HINT:  No operator matches the given name and argument types. You might need to add explicit type casts.
+
+[SQL: SELECT users.id AS users_id, users.name AS users_name, users.email AS users_email, users.password AS users_password, users.role AS users_role 
+FROM users 
+WHERE users.email = %(email_1)s]
+[parameters: {'email_1': 1}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\routing.py", line 680, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 134, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 120, in app
+    response = await f(request)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 674, in app
+    raw_response = await run_endpoint_function(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 330, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\concurrency.py", line 32, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\_backends\_asyncio.py", line 2518, in run_sync_in_worker_thread
+    return await future
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\_backends\_asyncio.py", line 1002, in run
+    result = context.run(func, *args)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\api\accounts\account.py", line 11, in create_account
+    return create_account_service(account,session)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\services\accounts\account_service.py", line 14, in create_account_service
+    raise Exception(str(e))
+NameError: name 'e' is not defined
+2026-06-19 11:39:37,671 | ERROR | exception_handler | Exception: POST http://127.0.0.1:8000/account/create (psycopg2.errors.UndefinedFunction) operator does not exist: character varying = integer
+LINE 3: WHERE users.email = 1
+                          ^
+HINT:  No operator matches the given name and argument types. You might need to add explicit type casts.
+
+[SQL: SELECT users.id AS users_id, users.name AS users_name, users.email AS users_email, users.password AS users_password, users.role AS users_role 
+FROM users 
+WHERE users.email = %(email_1)s]
+[parameters: {'email_1': 1}]
+(Background on this error at: https://sqlalche.me/e/20/f405) 
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UndefinedFunction: operator does not exist: character varying = integer
+LINE 3: WHERE users.email = 1
+                          ^
+HINT:  No operator matches the given name and argument types. You might need to add explicit type casts.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Python Basic Internship\alembic\Mini Project 2\services\accounts\account_service.py", line 6, in create_account_service
+    user = show_user(account.user_id,session)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\repo\users\user_repo.py", line 34, in show_user
+    user = session.query(User).filter_by(email=email).one_or_none()
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\query.py", line 2792, in one_or_none
+    return self._iter().one_or_none()  # type: ignore
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\query.py", line 2864, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\session.py", line 2372, in execute
+    return self._execute_internal(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\session.py", line 2270, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\context.py", line 306, in orm_execute_statement
+    result = conn.execute(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 1421, in execute
+    return meth(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\sql\elements.py", line 526, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 1643, in _execute_clauseelement
+    ret = self._execute_context(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 2365, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedFunction) operator does not exist: character varying = integer
+LINE 3: WHERE users.email = 1
+                          ^
+HINT:  No operator matches the given name and argument types. You might need to add explicit type casts.
+
+[SQL: SELECT users.id AS users_id, users.name AS users_name, users.email AS users_email, users.password AS users_password, users.role AS users_role 
+FROM users 
+WHERE users.email = %(email_1)s]
+[parameters: {'email_1': 1}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\routing.py", line 680, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 134, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 120, in app
+    response = await f(request)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 674, in app
+    raw_response = await run_endpoint_function(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 330, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\concurrency.py", line 32, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\_backends\_asyncio.py", line 2518, in run_sync_in_worker_thread
+    return await future
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\_backends\_asyncio.py", line 1002, in run
+    result = context.run(func, *args)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\api\accounts\account.py", line 11, in create_account
+    return create_account_service(account,session)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\services\accounts\account_service.py", line 14, in create_account_service
+    raise Exception(str(e))
+Exception: (psycopg2.errors.UndefinedFunction) operator does not exist: character varying = integer
+LINE 3: WHERE users.email = 1
+                          ^
+HINT:  No operator matches the given name and argument types. You might need to add explicit type casts.
+
+[SQL: SELECT users.id AS users_id, users.name AS users_name, users.email AS users_email, users.password AS users_password, users.role AS users_role 
+FROM users 
+WHERE users.email = %(email_1)s]
+[parameters: {'email_1': 1}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2026-06-19 11:47:32,250 | ERROR | exception_handler | Exception: POST http://127.0.0.1:8000/account/create (psycopg2.errors.UndefinedFunction) operator does not exist: character varying = integer
+LINE 3: WHERE users.email = 1
+                          ^
+HINT:  No operator matches the given name and argument types. You might need to add explicit type casts.
+
+[SQL: SELECT users.id AS users_id, users.name AS users_name, users.email AS users_email, users.password AS users_password, users.role AS users_role 
+FROM users 
+WHERE users.email = %(email_1)s]
+[parameters: {'email_1': 1}]
+(Background on this error at: https://sqlalche.me/e/20/f405) 
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UndefinedFunction: operator does not exist: character varying = integer
+LINE 3: WHERE users.email = 1
+                          ^
+HINT:  No operator matches the given name and argument types. You might need to add explicit type casts.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Python Basic Internship\alembic\Mini Project 2\services\accounts\account_service.py", line 6, in create_account_service
+    user = show_user(account.user_id,session)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\repo\users\user_repo.py", line 34, in show_user
+    user = session.query(User).filter_by(email=email).one_or_none()
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\query.py", line 2792, in one_or_none
+    return self._iter().one_or_none()  # type: ignore
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\query.py", line 2864, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\session.py", line 2372, in execute
+    return self._execute_internal(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\session.py", line 2270, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\context.py", line 306, in orm_execute_statement
+    result = conn.execute(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 1421, in execute
+    return meth(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\sql\elements.py", line 526, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 1643, in _execute_clauseelement
+    ret = self._execute_context(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 2365, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedFunction) operator does not exist: character varying = integer
+LINE 3: WHERE users.email = 1
+                          ^
+HINT:  No operator matches the given name and argument types. You might need to add explicit type casts.
+
+[SQL: SELECT users.id AS users_id, users.name AS users_name, users.email AS users_email, users.password AS users_password, users.role AS users_role 
+FROM users 
+WHERE users.email = %(email_1)s]
+[parameters: {'email_1': 1}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\routing.py", line 680, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 134, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 120, in app
+    response = await f(request)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 674, in app
+    raw_response = await run_endpoint_function(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 330, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\concurrency.py", line 32, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\_backends\_asyncio.py", line 2518, in run_sync_in_worker_thread
+    return await future
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\_backends\_asyncio.py", line 1002, in run
+    result = context.run(func, *args)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\api\accounts\account.py", line 11, in create_account
+    return create_account_service(account,session)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\services\accounts\account_service.py", line 14, in create_account_service
+    raise Exception(str(e))
+Exception: (psycopg2.errors.UndefinedFunction) operator does not exist: character varying = integer
+LINE 3: WHERE users.email = 1
+                          ^
+HINT:  No operator matches the given name and argument types. You might need to add explicit type casts.
+
+[SQL: SELECT users.id AS users_id, users.name AS users_name, users.email AS users_email, users.password AS users_password, users.role AS users_role 
+FROM users 
+WHERE users.email = %(email_1)s]
+[parameters: {'email_1': 1}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2026-06-19 11:57:59,934 | INFO | decorators.logging_decorator | API Called:login 
+2026-06-19 11:58:00,597 | INFO | decorators.logging_decorator | API finished:login 
+2026-06-19 11:58:00,598 | INFO | decorators.logging_decorator | API Process time:0.6632675000000745 
+2026-06-19 11:58:16,103 | ERROR | exception_handler | Exception: GET http://127.0.0.1:8000/account/balance Multiple rows were found when one or none was required 
+Traceback (most recent call last):
+  File "D:\Python Basic Internship\alembic\Mini Project 2\services\accounts\account_service.py", line 28, in check_balance_service
+    balance = check_balance(user.id,session)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\repo\accounts\account_repo.py", line 21, in check_balance
+    acc = session.query(Account.balance).filter_by(user_id=user_id).one_or_none()
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\query.py", line 2792, in one_or_none
+    return self._iter().one_or_none()  # type: ignore
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\result.py", line 1468, in one_or_none
+    return self._only_one_row(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\result.py", line 825, in _only_one_row
+    raise exc.MultipleResultsFound(
+sqlalchemy.exc.MultipleResultsFound: Multiple rows were found when one or none was required
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\routing.py", line 680, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 134, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 120, in app
+    response = await f(request)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 674, in app
+    raw_response = await run_endpoint_function(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 330, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\concurrency.py", line 32, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\_backends\_asyncio.py", line 2518, in run_sync_in_worker_thread
+    return await future
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\_backends\_asyncio.py", line 1002, in run
+    result = context.run(func, *args)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\api\accounts\account.py", line 22, in check_balance
+  File "D:\Python Basic Internship\alembic\Mini Project 2\services\accounts\account_service.py", line 33, in check_balance_service
+    raise Exception(str(e))
+Exception: Multiple rows were found when one or none was required
+2026-06-19 12:15:55,359 | ERROR | exception_handler | Exception: GET http://127.0.0.1:8000//transaction/deposit Invalid header string: 'utf-8' codec can't decode byte 0x88 in position 6: invalid start byte 
+  + Exception Group Traceback (most recent call last):
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 81, in collapse_excgroups
+  |     yield
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 192, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\_backends\_asyncio.py", line 799, in __aexit__
+  |     raise BaseExceptionGroup(
+  | exceptiongroup.ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    |     await self.app(scope, receive, _send)
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    |     with recv_stream, send_stream, collapse_excgroups():
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    |     self.gen.throw(typ, value, traceback)
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    |     raise exc
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |   File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 30, in token_verify
+    |     raise Exception(str(e))
+    | Exception: Invalid header string: 'utf-8' codec can't decode byte 0x88 in position 6: invalid start byte
+    +------------------------------------
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 30, in token_verify
+    raise Exception(str(e))
+Exception: Invalid header string: 'utf-8' codec can't decode byte 0x88 in position 6: invalid start byte
+2026-06-19 12:16:11,194 | INFO | decorators.logging_decorator | API Called:login 
+2026-06-19 12:16:11,848 | INFO | decorators.logging_decorator | API finished:login 
+2026-06-19 12:16:11,849 | INFO | decorators.logging_decorator | API Process time:0.6539419000000635 
+2026-06-19 12:21:50,602 | INFO | decorators.logging_decorator | API Called:login 
+2026-06-19 12:21:53,233 | INFO | decorators.logging_decorator | API finished:login 
+2026-06-19 12:21:53,233 | INFO | decorators.logging_decorator | API Process time:2.6302499999992506 
+2026-06-19 12:23:21,926 | INFO | decorators.logging_decorator | API Called:login 
+2026-06-19 12:23:22,694 | INFO | decorators.logging_decorator | API finished:login 
+2026-06-19 12:23:22,694 | INFO | decorators.logging_decorator | API Process time:0.7680184000000736 
+2026-06-19 12:33:47,944 | ERROR | exception_handler | Exception: POST http://127.0.0.1:8000/transaction/deposit?amount=200 Invalid token type. Token must be a <class 'bytes'> 
+  + Exception Group Traceback (most recent call last):
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 81, in collapse_excgroups
+  |     yield
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 192, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\_backends\_asyncio.py", line 799, in __aexit__
+  |     raise BaseExceptionGroup(
+  | exceptiongroup.ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    |     await self.app(scope, receive, _send)
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    |     with recv_stream, send_stream, collapse_excgroups():
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    |     self.gen.throw(typ, value, traceback)
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    |     raise exc
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |   File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 30, in token_verify
+    |     raise Exception(str(e))
+    | Exception: Invalid token type. Token must be a <class 'bytes'>
+    +------------------------------------
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 30, in token_verify
+    raise Exception(str(e))
+Exception: Invalid token type. Token must be a <class 'bytes'>
+2026-06-19 12:43:34,614 | INFO | decorators.logging_decorator | API Called:login 
+2026-06-19 12:43:35,287 | INFO | decorators.logging_decorator | API finished:login 
+2026-06-19 12:43:35,288 | INFO | decorators.logging_decorator | API Process time:0.6731042999999772 
+2026-06-19 12:45:48,058 | INFO | decorators.logging_decorator | API Called:login 
+2026-06-19 12:45:50,681 | INFO | decorators.logging_decorator | API finished:login 
+2026-06-19 12:45:50,681 | INFO | decorators.logging_decorator | API Process time:2.623237099999642 
+2026-06-19 13:12:18,235 | INFO | decorators.logging_decorator | API Called:login 
+2026-06-19 13:12:20,900 | INFO | decorators.logging_decorator | API finished:login 
+2026-06-19 13:12:20,900 | INFO | decorators.logging_decorator | API Process time:2.6643892000010965 
+2026-06-19 13:12:53,684 | ERROR | exception_handler | Exception: POST http://127.0.0.1:8000/transaction/transfer/?to_account=ACC20260002&amount=10 name 'get_account_by_userid' is not defined 
+Traceback (most recent call last):
+  File "D:\Python Basic Internship\alembic\Mini Project 2\services\accounts\account_service.py", line 60, in transfer_service
+    from_account = get_account_by_userid(user.id,session)
+NameError: name 'get_account_by_userid' is not defined
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\routing.py", line 680, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 134, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 120, in app
+    response = await f(request)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 674, in app
+    raw_response = await run_endpoint_function(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 330, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\concurrency.py", line 32, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\_backends\_asyncio.py", line 2518, in run_sync_in_worker_thread
+    return await future
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\_backends\_asyncio.py", line 1002, in run
+    result = context.run(func, *args)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\api\accounts\account.py", line 40, in transfer
+    return transfer_service(email,to_account,amount,session)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\services\accounts\account_service.py", line 72, in transfer_service
+    raise Exception(str(e))
+Exception: name 'get_account_by_userid' is not defined
+2026-06-19 13:14:24,410 | ERROR | exception_handler | Exception: POST http://127.0.0.1:8000/transaction/transfer/?to_account=ACC20260002&amount=10 (psycopg2.errors.InvalidTextRepresentation) invalid input syntax for type integer: "ACC20260001"
+LINE 3: WHERE accounts.user_id = 'ACC20260001'
+                                 ^
+
+[SQL: SELECT accounts.id AS accounts_id, accounts.user_id AS accounts_user_id, accounts.account_number AS accounts_account_number, accounts.account_type AS accounts_account_type, accounts.balance AS accounts_balance 
+FROM accounts 
+WHERE accounts.user_id = %(user_id_1)s]
+[parameters: {'user_id_1': 'ACC20260001'}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h) 
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.InvalidTextRepresentation: invalid input syntax for type integer: "ACC20260001"
+LINE 3: WHERE accounts.user_id = 'ACC20260001'
+                                 ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Python Basic Internship\alembic\Mini Project 2\services\accounts\account_service.py", line 62, in transfer_service
+    balance = check_balance(from_account,session)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\repo\accounts\account_repo.py", line 21, in check_balance
+    acc = session.query(Account).filter_by(user_id=user_id).one_or_none()
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\query.py", line 2792, in one_or_none
+    return self._iter().one_or_none()  # type: ignore
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\query.py", line 2864, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\session.py", line 2372, in execute
+    return self._execute_internal(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\session.py", line 2270, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\context.py", line 306, in orm_execute_statement
+    result = conn.execute(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 1421, in execute
+    return meth(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\sql\elements.py", line 526, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 1643, in _execute_clauseelement
+    ret = self._execute_context(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 2365, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.DataError: (psycopg2.errors.InvalidTextRepresentation) invalid input syntax for type integer: "ACC20260001"
+LINE 3: WHERE accounts.user_id = 'ACC20260001'
+                                 ^
+
+[SQL: SELECT accounts.id AS accounts_id, accounts.user_id AS accounts_user_id, accounts.account_number AS accounts_account_number, accounts.account_type AS accounts_account_type, accounts.balance AS accounts_balance 
+FROM accounts 
+WHERE accounts.user_id = %(user_id_1)s]
+[parameters: {'user_id_1': 'ACC20260001'}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\routing.py", line 680, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 134, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 120, in app
+    response = await f(request)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 674, in app
+    raw_response = await run_endpoint_function(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 330, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\concurrency.py", line 32, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\_backends\_asyncio.py", line 2518, in run_sync_in_worker_thread
+    return await future
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\_backends\_asyncio.py", line 1002, in run
+    result = context.run(func, *args)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\api\accounts\account.py", line 40, in transfer
+    return transfer_service(email,to_account,amount,session)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\services\accounts\account_service.py", line 72, in transfer_service
+    raise Exception(str(e))
+Exception: (psycopg2.errors.InvalidTextRepresentation) invalid input syntax for type integer: "ACC20260001"
+LINE 3: WHERE accounts.user_id = 'ACC20260001'
+                                 ^
+
+[SQL: SELECT accounts.id AS accounts_id, accounts.user_id AS accounts_user_id, accounts.account_number AS accounts_account_number, accounts.account_type AS accounts_account_type, accounts.balance AS accounts_balance 
+FROM accounts 
+WHERE accounts.user_id = %(user_id_1)s]
+[parameters: {'user_id_1': 'ACC20260001'}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+2026-06-19 13:16:55,349 | ERROR | exception_handler | Exception: POST http://127.0.0.1:8000/transaction/transfer/?to_account=ACC20260002&amount=10 (psycopg2.errors.InvalidTextRepresentation) invalid input syntax for type integer: "ACC20260001"
+LINE 3: WHERE accounts.user_id = 'ACC20260001'
+                                 ^
+
+[SQL: SELECT accounts.id AS accounts_id, accounts.user_id AS accounts_user_id, accounts.account_number AS accounts_account_number, accounts.account_type AS accounts_account_type, accounts.balance AS accounts_balance 
+FROM accounts 
+WHERE accounts.user_id = %(user_id_1)s]
+[parameters: {'user_id_1': 'ACC20260001'}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h) 
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.InvalidTextRepresentation: invalid input syntax for type integer: "ACC20260001"
+LINE 3: WHERE accounts.user_id = 'ACC20260001'
+                                 ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Python Basic Internship\alembic\Mini Project 2\services\accounts\account_service.py", line 62, in transfer_service
+    balance = check_balance(from_account,session)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\repo\accounts\account_repo.py", line 21, in check_balance
+    acc = session.query(Account).filter_by(user_id=user_id).one_or_none()
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\query.py", line 2792, in one_or_none
+    return self._iter().one_or_none()  # type: ignore
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\query.py", line 2864, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\session.py", line 2372, in execute
+    return self._execute_internal(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\session.py", line 2270, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\context.py", line 306, in orm_execute_statement
+    result = conn.execute(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 1421, in execute
+    return meth(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\sql\elements.py", line 526, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 1643, in _execute_clauseelement
+    ret = self._execute_context(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 2365, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.DataError: (psycopg2.errors.InvalidTextRepresentation) invalid input syntax for type integer: "ACC20260001"
+LINE 3: WHERE accounts.user_id = 'ACC20260001'
+                                 ^
+
+[SQL: SELECT accounts.id AS accounts_id, accounts.user_id AS accounts_user_id, accounts.account_number AS accounts_account_number, accounts.account_type AS accounts_account_type, accounts.balance AS accounts_balance 
+FROM accounts 
+WHERE accounts.user_id = %(user_id_1)s]
+[parameters: {'user_id_1': 'ACC20260001'}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\routing.py", line 680, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 134, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 120, in app
+    response = await f(request)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 674, in app
+    raw_response = await run_endpoint_function(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 330, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\concurrency.py", line 32, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\_backends\_asyncio.py", line 2518, in run_sync_in_worker_thread
+    return await future
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\_backends\_asyncio.py", line 1002, in run
+    result = context.run(func, *args)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\api\accounts\account.py", line 40, in transfer
+    return transfer_service(email,to_account,amount,session)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\services\accounts\account_service.py", line 72, in transfer_service
+    raise Exception(str(e))
+Exception: (psycopg2.errors.InvalidTextRepresentation) invalid input syntax for type integer: "ACC20260001"
+LINE 3: WHERE accounts.user_id = 'ACC20260001'
+                                 ^
+
+[SQL: SELECT accounts.id AS accounts_id, accounts.user_id AS accounts_user_id, accounts.account_number AS accounts_account_number, accounts.account_type AS accounts_account_type, accounts.balance AS accounts_balance 
+FROM accounts 
+WHERE accounts.user_id = %(user_id_1)s]
+[parameters: {'user_id_1': 'ACC20260001'}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+2026-06-19 13:18:48,656 | ERROR | exception_handler | Exception: POST http://127.0.0.1:8000/transaction/transfer/?to_account=ACC20260002&amount=10 (psycopg2.ProgrammingError) can't adapt type 'Row'
+[SQL: SELECT accounts.id AS accounts_id, accounts.user_id AS accounts_user_id, accounts.account_number AS accounts_account_number, accounts.account_type AS accounts_account_type, accounts.balance AS accounts_balance 
+FROM accounts 
+WHERE accounts.user_id = %(user_id_1)s]
+[parameters: {'user_id_1': ('ACC20260001',)}]
+(Background on this error at: https://sqlalche.me/e/20/f405) 
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.ProgrammingError: can't adapt type 'Row'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Python Basic Internship\alembic\Mini Project 2\services\accounts\account_service.py", line 62, in transfer_service
+    balance = check_balance(from_account,session)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\repo\accounts\account_repo.py", line 21, in check_balance
+    acc = session.query(Account).filter_by(user_id=user_id).one_or_none()
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\query.py", line 2792, in one_or_none
+    return self._iter().one_or_none()  # type: ignore
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\query.py", line 2864, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\session.py", line 2372, in execute
+    return self._execute_internal(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\session.py", line 2270, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\context.py", line 306, in orm_execute_statement
+    result = conn.execute(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 1421, in execute
+    return meth(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\sql\elements.py", line 526, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 1643, in _execute_clauseelement
+    ret = self._execute_context(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 2365, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.ProgrammingError) can't adapt type 'Row'
+[SQL: SELECT accounts.id AS accounts_id, accounts.user_id AS accounts_user_id, accounts.account_number AS accounts_account_number, accounts.account_type AS accounts_account_type, accounts.balance AS accounts_balance 
+FROM accounts 
+WHERE accounts.user_id = %(user_id_1)s]
+[parameters: {'user_id_1': ('ACC20260001',)}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\routing.py", line 680, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 134, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 120, in app
+    response = await f(request)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 674, in app
+    raw_response = await run_endpoint_function(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 330, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\concurrency.py", line 32, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\_backends\_asyncio.py", line 2518, in run_sync_in_worker_thread
+    return await future
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\_backends\_asyncio.py", line 1002, in run
+    result = context.run(func, *args)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\api\accounts\account.py", line 40, in transfer
+    return transfer_service(email,to_account,amount,session)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\services\accounts\account_service.py", line 72, in transfer_service
+    raise Exception(str(e))
+Exception: (psycopg2.ProgrammingError) can't adapt type 'Row'
+[SQL: SELECT accounts.id AS accounts_id, accounts.user_id AS accounts_user_id, accounts.account_number AS accounts_account_number, accounts.account_type AS accounts_account_type, accounts.balance AS accounts_balance 
+FROM accounts 
+WHERE accounts.user_id = %(user_id_1)s]
+[parameters: {'user_id_1': ('ACC20260001',)}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2026-06-19 13:22:32,684 | ERROR | exception_handler | Exception: POST http://127.0.0.1:8000/transaction/transfer/?to_account=ACC20260002&amount=10 'int' object is not subscriptable 
+Traceback (most recent call last):
+  File "D:\Python Basic Internship\alembic\Mini Project 2\services\accounts\account_service.py", line 60, in transfer_service
+    from_account = get_account_by_userid(user.id[0],session)
+TypeError: 'int' object is not subscriptable
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\routing.py", line 680, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 134, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 120, in app
+    response = await f(request)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 674, in app
+    raw_response = await run_endpoint_function(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 330, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\concurrency.py", line 32, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\_backends\_asyncio.py", line 2518, in run_sync_in_worker_thread
+    return await future
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\_backends\_asyncio.py", line 1002, in run
+    result = context.run(func, *args)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\api\accounts\account.py", line 40, in transfer
+    return transfer_service(email,to_account,amount,session)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\services\accounts\account_service.py", line 72, in transfer_service
+    raise Exception(str(e))
+Exception: 'int' object is not subscriptable
+2026-06-19 13:25:12,071 | ERROR | exception_handler | Exception: POST http://127.0.0.1:8000/transaction/transfer/?to_account=ACC20260002&amount=10 (psycopg2.ProgrammingError) can't adapt type 'Row'
+[SQL: SELECT accounts.id AS accounts_id, accounts.user_id AS accounts_user_id, accounts.account_number AS accounts_account_number, accounts.account_type AS accounts_account_type, accounts.balance AS accounts_balance 
+FROM accounts 
+WHERE accounts.user_id = %(user_id_1)s]
+[parameters: {'user_id_1': ('ACC20260001',)}]
+(Background on this error at: https://sqlalche.me/e/20/f405) 
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.ProgrammingError: can't adapt type 'Row'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Python Basic Internship\alembic\Mini Project 2\services\accounts\account_service.py", line 63, in transfer_service
+    balance = check_balance(from_account,session)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\repo\accounts\account_repo.py", line 21, in check_balance
+    acc = session.query(Account).filter_by(user_id=user_id).one_or_none()
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\query.py", line 2792, in one_or_none
+    return self._iter().one_or_none()  # type: ignore
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\query.py", line 2864, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\session.py", line 2372, in execute
+    return self._execute_internal(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\session.py", line 2270, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\context.py", line 306, in orm_execute_statement
+    result = conn.execute(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 1421, in execute
+    return meth(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\sql\elements.py", line 526, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 1643, in _execute_clauseelement
+    ret = self._execute_context(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 2365, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.ProgrammingError) can't adapt type 'Row'
+[SQL: SELECT accounts.id AS accounts_id, accounts.user_id AS accounts_user_id, accounts.account_number AS accounts_account_number, accounts.account_type AS accounts_account_type, accounts.balance AS accounts_balance 
+FROM accounts 
+WHERE accounts.user_id = %(user_id_1)s]
+[parameters: {'user_id_1': ('ACC20260001',)}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\routing.py", line 680, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 134, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 120, in app
+    response = await f(request)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 674, in app
+    raw_response = await run_endpoint_function(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 330, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\concurrency.py", line 32, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\_backends\_asyncio.py", line 2518, in run_sync_in_worker_thread
+    return await future
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\_backends\_asyncio.py", line 1002, in run
+    result = context.run(func, *args)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\api\accounts\account.py", line 40, in transfer
+    return transfer_service(email,to_account,amount,session)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\services\accounts\account_service.py", line 73, in transfer_service
+    raise Exception(str(e))
+Exception: (psycopg2.ProgrammingError) can't adapt type 'Row'
+[SQL: SELECT accounts.id AS accounts_id, accounts.user_id AS accounts_user_id, accounts.account_number AS accounts_account_number, accounts.account_type AS accounts_account_type, accounts.balance AS accounts_balance 
+FROM accounts 
+WHERE accounts.user_id = %(user_id_1)s]
+[parameters: {'user_id_1': ('ACC20260001',)}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2026-06-19 13:26:33,590 | ERROR | exception_handler | Exception: POST http://127.0.0.1:8000/transaction/transfer/?to_account=ACC20260002&amount=10 (psycopg2.errors.InvalidTextRepresentation) invalid input syntax for type integer: "ACC20260001"
+LINE 3: WHERE accounts.user_id = 'ACC20260001'
+                                 ^
+
+[SQL: SELECT accounts.id AS accounts_id, accounts.user_id AS accounts_user_id, accounts.account_number AS accounts_account_number, accounts.account_type AS accounts_account_type, accounts.balance AS accounts_balance 
+FROM accounts 
+WHERE accounts.user_id = %(user_id_1)s]
+[parameters: {'user_id_1': 'ACC20260001'}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h) 
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.InvalidTextRepresentation: invalid input syntax for type integer: "ACC20260001"
+LINE 3: WHERE accounts.user_id = 'ACC20260001'
+                                 ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Python Basic Internship\alembic\Mini Project 2\services\accounts\account_service.py", line 62, in transfer_service
+    balance = check_balance(from_account,session)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\repo\accounts\account_repo.py", line 21, in check_balance
+    acc = session.query(Account).filter_by(user_id=user_id).one_or_none()
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\query.py", line 2792, in one_or_none
+    return self._iter().one_or_none()  # type: ignore
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\query.py", line 2864, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\session.py", line 2372, in execute
+    return self._execute_internal(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\session.py", line 2270, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\context.py", line 306, in orm_execute_statement
+    result = conn.execute(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 1421, in execute
+    return meth(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\sql\elements.py", line 526, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 1643, in _execute_clauseelement
+    ret = self._execute_context(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 2365, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.DataError: (psycopg2.errors.InvalidTextRepresentation) invalid input syntax for type integer: "ACC20260001"
+LINE 3: WHERE accounts.user_id = 'ACC20260001'
+                                 ^
+
+[SQL: SELECT accounts.id AS accounts_id, accounts.user_id AS accounts_user_id, accounts.account_number AS accounts_account_number, accounts.account_type AS accounts_account_type, accounts.balance AS accounts_balance 
+FROM accounts 
+WHERE accounts.user_id = %(user_id_1)s]
+[parameters: {'user_id_1': 'ACC20260001'}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\routing.py", line 680, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 134, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 120, in app
+    response = await f(request)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 674, in app
+    raw_response = await run_endpoint_function(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 330, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\concurrency.py", line 32, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\_backends\_asyncio.py", line 2518, in run_sync_in_worker_thread
+    return await future
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\_backends\_asyncio.py", line 1002, in run
+    result = context.run(func, *args)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\api\accounts\account.py", line 40, in transfer
+    return transfer_service(email,to_account,amount,session)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\services\accounts\account_service.py", line 72, in transfer_service
+    raise Exception(str(e))
+Exception: (psycopg2.errors.InvalidTextRepresentation) invalid input syntax for type integer: "ACC20260001"
+LINE 3: WHERE accounts.user_id = 'ACC20260001'
+                                 ^
+
+[SQL: SELECT accounts.id AS accounts_id, accounts.user_id AS accounts_user_id, accounts.account_number AS accounts_account_number, accounts.account_type AS accounts_account_type, accounts.balance AS accounts_balance 
+FROM accounts 
+WHERE accounts.user_id = %(user_id_1)s]
+[parameters: {'user_id_1': 'ACC20260001'}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+2026-06-19 13:29:22,841 | ERROR | exception_handler | Exception: POST http://127.0.0.1:8000/transaction/transfer/?to_account=ACC20260002&amount=10 (psycopg2.errors.InvalidTextRepresentation) invalid input syntax for type integer: "ACC20260001"
+LINE 3: WHERE accounts.user_id = 'ACC20260001'
+                                 ^
+
+[SQL: SELECT accounts.id AS accounts_id, accounts.user_id AS accounts_user_id, accounts.account_number AS accounts_account_number, accounts.account_type AS accounts_account_type, accounts.balance AS accounts_balance 
+FROM accounts 
+WHERE accounts.user_id = %(user_id_1)s]
+[parameters: {'user_id_1': 'ACC20260001'}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h) 
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.InvalidTextRepresentation: invalid input syntax for type integer: "ACC20260001"
+LINE 3: WHERE accounts.user_id = 'ACC20260001'
+                                 ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Python Basic Internship\alembic\Mini Project 2\services\accounts\account_service.py", line 64, in transfer_service
+    balance = check_balance(from_account,session)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\repo\accounts\account_repo.py", line 21, in check_balance
+    acc = session.query(Account).filter_by(user_id=user_id).one_or_none()
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\query.py", line 2792, in one_or_none
+    return self._iter().one_or_none()  # type: ignore
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\query.py", line 2864, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\session.py", line 2372, in execute
+    return self._execute_internal(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\session.py", line 2270, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\context.py", line 306, in orm_execute_statement
+    result = conn.execute(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 1421, in execute
+    return meth(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\sql\elements.py", line 526, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 1643, in _execute_clauseelement
+    ret = self._execute_context(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 2365, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.DataError: (psycopg2.errors.InvalidTextRepresentation) invalid input syntax for type integer: "ACC20260001"
+LINE 3: WHERE accounts.user_id = 'ACC20260001'
+                                 ^
+
+[SQL: SELECT accounts.id AS accounts_id, accounts.user_id AS accounts_user_id, accounts.account_number AS accounts_account_number, accounts.account_type AS accounts_account_type, accounts.balance AS accounts_balance 
+FROM accounts 
+WHERE accounts.user_id = %(user_id_1)s]
+[parameters: {'user_id_1': 'ACC20260001'}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\routing.py", line 680, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 134, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 120, in app
+    response = await f(request)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 674, in app
+    raw_response = await run_endpoint_function(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 330, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\concurrency.py", line 32, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\_backends\_asyncio.py", line 2518, in run_sync_in_worker_thread
+    return await future
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\_backends\_asyncio.py", line 1002, in run
+    result = context.run(func, *args)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\api\accounts\account.py", line 40, in transfer
+    return transfer_service(email,to_account,amount,session)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\services\accounts\account_service.py", line 74, in transfer_service
+    raise Exception(str(e))
+Exception: (psycopg2.errors.InvalidTextRepresentation) invalid input syntax for type integer: "ACC20260001"
+LINE 3: WHERE accounts.user_id = 'ACC20260001'
+                                 ^
+
+[SQL: SELECT accounts.id AS accounts_id, accounts.user_id AS accounts_user_id, accounts.account_number AS accounts_account_number, accounts.account_type AS accounts_account_type, accounts.balance AS accounts_balance 
+FROM accounts 
+WHERE accounts.user_id = %(user_id_1)s]
+[parameters: {'user_id_1': 'ACC20260001'}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+2026-06-19 13:31:24,077 | ERROR | exception_handler | Exception: POST http://127.0.0.1:8000/transaction/transfer/?to_account=ACC20260002&amount=10 (psycopg2.errors.InvalidTextRepresentation) invalid input syntax for type integer: "ACC20260001"
+LINE 3: WHERE accounts.user_id = 'ACC20260001'
+                                 ^
+
+[SQL: SELECT accounts.id AS accounts_id, accounts.user_id AS accounts_user_id, accounts.account_number AS accounts_account_number, accounts.account_type AS accounts_account_type, accounts.balance AS accounts_balance 
+FROM accounts 
+WHERE accounts.user_id = %(user_id_1)s]
+[parameters: {'user_id_1': 'ACC20260001'}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h) 
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.InvalidTextRepresentation: invalid input syntax for type integer: "ACC20260001"
+LINE 3: WHERE accounts.user_id = 'ACC20260001'
+                                 ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Python Basic Internship\alembic\Mini Project 2\services\accounts\account_service.py", line 62, in transfer_service
+    balance = check_balance(from_account,session)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\repo\accounts\account_repo.py", line 21, in check_balance
+    acc = session.query(Account).filter_by(user_id=user_id).one_or_none()
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\query.py", line 2792, in one_or_none
+    return self._iter().one_or_none()  # type: ignore
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\query.py", line 2864, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\session.py", line 2372, in execute
+    return self._execute_internal(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\session.py", line 2270, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\context.py", line 306, in orm_execute_statement
+    result = conn.execute(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 1421, in execute
+    return meth(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\sql\elements.py", line 526, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 1643, in _execute_clauseelement
+    ret = self._execute_context(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 2365, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.DataError: (psycopg2.errors.InvalidTextRepresentation) invalid input syntax for type integer: "ACC20260001"
+LINE 3: WHERE accounts.user_id = 'ACC20260001'
+                                 ^
+
+[SQL: SELECT accounts.id AS accounts_id, accounts.user_id AS accounts_user_id, accounts.account_number AS accounts_account_number, accounts.account_type AS accounts_account_type, accounts.balance AS accounts_balance 
+FROM accounts 
+WHERE accounts.user_id = %(user_id_1)s]
+[parameters: {'user_id_1': 'ACC20260001'}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\routing.py", line 680, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 134, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 120, in app
+    response = await f(request)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 674, in app
+    raw_response = await run_endpoint_function(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 330, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\concurrency.py", line 32, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\_backends\_asyncio.py", line 2518, in run_sync_in_worker_thread
+    return await future
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\_backends\_asyncio.py", line 1002, in run
+    result = context.run(func, *args)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\api\accounts\account.py", line 40, in transfer
+    return transfer_service(email,to_account,amount,session)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\services\accounts\account_service.py", line 72, in transfer_service
+    raise Exception(str(e))
+Exception: (psycopg2.errors.InvalidTextRepresentation) invalid input syntax for type integer: "ACC20260001"
+LINE 3: WHERE accounts.user_id = 'ACC20260001'
+                                 ^
+
+[SQL: SELECT accounts.id AS accounts_id, accounts.user_id AS accounts_user_id, accounts.account_number AS accounts_account_number, accounts.account_type AS accounts_account_type, accounts.balance AS accounts_balance 
+FROM accounts 
+WHERE accounts.user_id = %(user_id_1)s]
+[parameters: {'user_id_1': 'ACC20260001'}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+2026-06-19 13:32:30,594 | ERROR | exception_handler | Exception: POST http://127.0.0.1:8000/transaction/transfer/?to_account=ACC20260002&amount=10 (psycopg2.errors.InvalidTextRepresentation) invalid input syntax for type integer: "testing1@gmail.com"
+LINE 3: WHERE accounts.user_id = 'testing1@gmail.com'
+                                 ^
+
+[SQL: SELECT accounts.id AS accounts_id, accounts.user_id AS accounts_user_id, accounts.account_number AS accounts_account_number, accounts.account_type AS accounts_account_type, accounts.balance AS accounts_balance 
+FROM accounts 
+WHERE accounts.user_id = %(user_id_1)s]
+[parameters: {'user_id_1': 'testing1@gmail.com'}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h) 
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.InvalidTextRepresentation: invalid input syntax for type integer: "testing1@gmail.com"
+LINE 3: WHERE accounts.user_id = 'testing1@gmail.com'
+                                 ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Python Basic Internship\alembic\Mini Project 2\services\accounts\account_service.py", line 62, in transfer_service
+    balance = check_balance(email,session)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\repo\accounts\account_repo.py", line 21, in check_balance
+    acc = session.query(Account).filter_by(user_id=user_id).one_or_none()
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\query.py", line 2792, in one_or_none
+    return self._iter().one_or_none()  # type: ignore
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\query.py", line 2864, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\session.py", line 2372, in execute
+    return self._execute_internal(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\session.py", line 2270, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\context.py", line 306, in orm_execute_statement
+    result = conn.execute(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 1421, in execute
+    return meth(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\sql\elements.py", line 526, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 1643, in _execute_clauseelement
+    ret = self._execute_context(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 2365, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.DataError: (psycopg2.errors.InvalidTextRepresentation) invalid input syntax for type integer: "testing1@gmail.com"
+LINE 3: WHERE accounts.user_id = 'testing1@gmail.com'
+                                 ^
+
+[SQL: SELECT accounts.id AS accounts_id, accounts.user_id AS accounts_user_id, accounts.account_number AS accounts_account_number, accounts.account_type AS accounts_account_type, accounts.balance AS accounts_balance 
+FROM accounts 
+WHERE accounts.user_id = %(user_id_1)s]
+[parameters: {'user_id_1': 'testing1@gmail.com'}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\routing.py", line 680, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 134, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 120, in app
+    response = await f(request)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 674, in app
+    raw_response = await run_endpoint_function(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 330, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\concurrency.py", line 32, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\_backends\_asyncio.py", line 2518, in run_sync_in_worker_thread
+    return await future
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\_backends\_asyncio.py", line 1002, in run
+    result = context.run(func, *args)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\api\accounts\account.py", line 40, in transfer
+    return transfer_service(email,to_account,amount,session)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\services\accounts\account_service.py", line 72, in transfer_service
+    raise Exception(str(e))
+Exception: (psycopg2.errors.InvalidTextRepresentation) invalid input syntax for type integer: "testing1@gmail.com"
+LINE 3: WHERE accounts.user_id = 'testing1@gmail.com'
+                                 ^
+
+[SQL: SELECT accounts.id AS accounts_id, accounts.user_id AS accounts_user_id, accounts.account_number AS accounts_account_number, accounts.account_type AS accounts_account_type, accounts.balance AS accounts_balance 
+FROM accounts 
+WHERE accounts.user_id = %(user_id_1)s]
+[parameters: {'user_id_1': 'testing1@gmail.com'}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+2026-06-19 13:35:34,692 | ERROR | exception_handler | Exception: POST http://127.0.0.1:8000/transaction/transfer/?to_account=ACC20260002&amount=10 '>' not supported between instances of 'int' and 'Account' 
+Traceback (most recent call last):
+  File "D:\Python Basic Internship\alembic\Mini Project 2\services\accounts\account_service.py", line 67, in transfer_service
+    if amount > balance:
+TypeError: '>' not supported between instances of 'int' and 'Account'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\routing.py", line 680, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 134, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 120, in app
+    response = await f(request)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 674, in app
+    raw_response = await run_endpoint_function(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 330, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\concurrency.py", line 32, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\_backends\_asyncio.py", line 2518, in run_sync_in_worker_thread
+    return await future
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\_backends\_asyncio.py", line 1002, in run
+    result = context.run(func, *args)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\api\accounts\account.py", line 40, in transfer
+    return transfer_service(email,to_account,amount,session)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\services\accounts\account_service.py", line 72, in transfer_service
+    raise Exception(str(e))
+Exception: '>' not supported between instances of 'int' and 'Account'
+2026-06-19 15:42:18,394 | INFO | decorators.logging_decorator | API Called:login 
+2026-06-19 15:42:21,111 | ERROR | exception_handler | Exception: POST http://127.0.0.1:8000/user/login?=&= incorrect username and password 
+Traceback (most recent call last):
+  File "D:\Python Basic Internship\alembic\Mini Project 2\services\users\user_service.py", line 24, in get_access_token_service
+    raise Exception("incorrect username and password")
+Exception: incorrect username and password
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\routing.py", line 680, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 134, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 120, in app
+    response = await f(request)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 674, in app
+    raw_response = await run_endpoint_function(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 328, in run_endpoint_function
+    return await dependant.call(**values)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\slowapi\extension.py", line 734, in async_wrapper
+    response = await func(*args, **kwargs)  # type: ignore
+  File "D:\Python Basic Internship\alembic\Mini Project 2\decorators\logging_decorator.py", line 12, in wrapper
+    result = func(*args,**kwargs)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\api\users\user.py", line 19, in login
+    return get_access_token_service(email,password,session)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\services\users\user_service.py", line 26, in get_access_token_service
+    raise Exception(str(e))
+Exception: incorrect username and password
