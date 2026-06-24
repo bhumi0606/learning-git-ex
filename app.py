@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from api.users.user import user_route
 from api.accounts.account import account_route
+from api.transaction.transaction import transaction_route
 from handler.exception_handler import exception_handler
 from core.logger import set_logger
 from middleware.token_verify import token_verify
@@ -14,3 +15,4 @@ app.add_exception_handler(RateLimitExceeded,exception_handler)
 app.middleware("http")(token_verify)
 app.include_router(user_route)
 app.include_router(account_route)
+app.include_router(transaction_route)

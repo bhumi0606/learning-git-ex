@@ -4,9 +4,8 @@ from core.config import SECRET_KEY,ALGORITHM
 
 
 def token_verify(request:Request,call_next):
-
     if request.url.path in ["/user/login",
-        "/account/create",
+        "/user/create",
         "/docs",
         "/openapi.json",
         "/redoc",

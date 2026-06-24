@@ -24,7 +24,4 @@ def refresh_token(token):
             role = payload.get('role')
         )
         token = create_access_token(data,refresh_token=True)
-        return {
-            'access_token':token,
-            'type': 'bearer'
-        }
+        return token

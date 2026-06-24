@@ -1,4 +1,4 @@
-from schemas.database_model import Account
+from schemas.database_model import Account,Type
 
 def create_account(account,session):
     acc = Account(
@@ -51,3 +51,42 @@ def get_account(acc_no,session):
 def get_account_by_userid(user_id,session):
     acc = session.query(Account.account_number).filter_by(user_id=user_id).one_or_none()
     return acc[0]
+
+def get_saving_account(session):
+    accounts = session.query(Account).filter_by(account_type=Type.SAVING).all()
+    return accounts
+
+def get_current_account(session):
+    accounts = session.query(Account).filter_by(account_type=Type.CURRENT).all()
+    return accounts
+
+def get_accounts(sort_by,search,filter_by,max_balance,min_balance,session):
+    query = session.query(Account)
+    if max_balance:
+        query = query.filter(Account.balance <= max_balance)
+    if min_balance:
+        query = query.filter(Account.balance >= min_balance)
+    if sort_by:
+        if sort_by == "balance":
+            query = query.order_by(Account.balance)
+        if sort_by == "-balance":
+            query = query.order_by(Account.balance.desc())
+
+        if sort_by == "account_number":
+            query = query.order_by(Account.account_number)
+        if sort_by == "-account_number":
+            query = query.order_by(Account.account_number.desc())
+        
+        if sort_by == "created_at":
+            query = query.order_by(Account.created_at)
+        if sort_by == "-created_at":
+            query = query.order_by(Account.created_at.desc())
+
+    if search:
+        query = query.filter(Account.account_number.ilike(f"%{search}%"))
+
+    if filter_by:
+        query = query.filter(Account.account_type.ilike(f"%{filter_by}%"))
+
+    accounts = query.all()
+    return accounts

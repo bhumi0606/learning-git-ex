@@ -6,6 +6,8 @@ import enum
 from sqlalchemy import Enum
 from core.config import DATABASE_URL
 from sqlalchemy.orm import sessionmaker
+from datetime import datetime
+from sqlalchemy import DateTime
 
 engine = create_engine(DATABASE_URL)
 Base = declarative_base()
@@ -26,6 +28,7 @@ class User(Base):
     email = mapped_column(String)
     password = mapped_column(String)
     role = mapped_column(Enum(Role))
+    created_at = mapped_column(DateTime,default=datetime.utcnow())
 
 class Account(Base):
     __tablename__ = "accounts"
@@ -35,6 +38,24 @@ class Account(Base):
     account_number = mapped_column(String)
     account_type = mapped_column(Enum(Type))
     balance = mapped_column(Integer)
+    created_at = mapped_column(DateTime,default=datetime.utcnow())
+
+class TransactionType(enum.Enum):
+    deposit = "deposit"
+    withdraw = "withdraw"
+    transfer = "transfer"
+
+class Transaction(Base):
+    __tablename__ = "transactions"
+
+    transaction_id = mapped_column(Integer,primary_key=True)
+    sender_account_number = mapped_column(ForeignKey("accounts.account_number"))
+    receiver_account_number = mapped_column(ForeignKey("accounts.account_number"))
+    amount = mapped_column(Integer)
+    created_at = mapped_column(DateTime,default=datetime.utcnow())
+    transaction_type = mapped_column(Enum(TransactionType))
+    description = mapped_column(String(length=50))
+
 
 Session = sessionmaker(bind=engine)
 

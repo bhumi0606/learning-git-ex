@@ -1,0 +1,95 @@
+from fastapi import APIRouter, Depends, HTTPException, Query
+from services.transaction.transaction_service import deposit_service, withdraw_service, transfer_service, get_transactions_service
+from schemas.database_model import get_session
+from fastapi import Request
+from typing import List
+from schemas.transaction.transaction_responseModel import BalanceResponse
+
+transaction_route = APIRouter()
+
+@transaction_route.get('/transaction/deposit')
+def deposit(
+            request:Request,
+            amount:int,
+            description=Query(
+                default = None
+            ),
+            session=Depends(get_session)):
+    # data = request.state.current_user
+    # email = data.get('email')
+    email = "testing1@gmail.com"
+    balance = deposit_service(email,amount,description,session)
+    if balance:
+        return {
+            'response': balance
+        }
+    raise HTTPException(status_code=404,detail='account not found.')
+    
+@transaction_route.post('/transaction/withdraw')
+def withdraw(
+            request:Request,
+            amount:int,
+            description = Query(
+                default = None
+            ),
+            session=Depends(get_session)):
+    # data = request.state.current_user
+    # email = data.get('email')
+    email = "testing1@gmail.com"
+    balance = withdraw_service(email,amount,description,session)
+    if balance:
+        return {
+            'response': balance
+        }
+    raise HTTPException(status_code=404,detail='account not found.')
+      
+@transaction_route.post('/transaction/transfer')
+def transfer(
+        request:Request,
+        to_account:str,
+        amount:int,
+        description = Query(
+            default = None
+        ),
+        session=Depends(get_session)):
+    # data = request.state.current_user
+    # email = data.get('email')
+    email = "testing1@gmail.com"
+    msg = transfer_service(email,to_account,amount,description,session)
+    print(msg)
+    if msg == "transaction completed.":
+        return {
+            'message':msg
+        }
+    raise HTTPException(status_code=404,detail=msg)
+
+
+@transaction_route.get('/transactions')
+def get_transaction(
+        request:Request,
+        sort_by = Query(
+            default = None,
+            description = "sort by (transaction_id,amount,created_at)"
+        ),
+        search_by = Query(
+            default = None,
+            description = "search by account number"
+        ),
+        filter_by = Query(
+            default = None,
+            description = "filter by transaction type"
+        ),
+        max_amount = Query(
+            default = None,
+            description = "max transaction amount"
+        ),
+        min_amount = Query(
+            default = None,
+            description = "min transaction amount"
+        ),
+        session=Depends(get_session)
+    ):
+    transactions = get_transactions_service(sort_by,search_by,filter_by,max_amount,min_amount,session)
+    if transactions:
+        return transactions
+    raise HTTPException(status_code=404,detail="transaction not found")
