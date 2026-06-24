@@ -66,11 +66,3 @@ def show_user(email,session):
 def get_user_by_id(id,session):
     user = session.query(User).filter_by(id=id).one_or_none()
     return user
-
-def get_users(session):
-    users = session.query(User).filter_by(role=Role.USER).all()
-    return users
-
-def get_admins(session):
-    admins = session.query(User).filter_by(role=Role.ADMIN).all()
-    return admins

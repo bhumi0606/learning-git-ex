@@ -52,13 +52,6 @@ def get_account_by_userid(user_id,session):
     acc = session.query(Account.account_number).filter_by(user_id=user_id).one_or_none()
     return acc[0]
 
-def get_saving_account(session):
-    accounts = session.query(Account).filter_by(account_type=Type.SAVING).all()
-    return accounts
-
-def get_current_account(session):
-    accounts = session.query(Account).filter_by(account_type=Type.CURRENT).all()
-    return accounts
 
 def get_accounts(sort_by,search,filter_by,max_balance,min_balance,session):
     query = session.query(Account)

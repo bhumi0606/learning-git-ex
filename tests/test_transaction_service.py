@@ -1,4 +1,3 @@
-import pytest
 from unittest.mock import MagicMock, patch
 
 from services.transaction.transaction_service import deposit_service, withdraw_service, transfer_service, get_transactions_service

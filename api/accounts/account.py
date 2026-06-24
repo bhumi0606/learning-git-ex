@@ -22,7 +22,7 @@ def delete_account(request:Request,id,session=Depends(get_session)):
     if role == Role.ADMIN:
         return delete_account_service(id,session)
     raise HTTPException(status_code=404,detail='account not deleted.')
-    
+   
 
 @account_route.get('/account/balance',response_model=BalanceResponse)
 def check_balance(request:Request,session=Depends(get_session)):

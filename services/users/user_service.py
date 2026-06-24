@@ -1,4 +1,4 @@
-from repo.users.user_repo import add_user, get_admins, get_user_by_id, get_users, update_user, delete_user, show_users, show_user
+from repo.users.user_repo import add_user, get_user_by_id, update_user, delete_user, show_users, show_user
 from passlib.context import CryptContext
 from schemas.users import user_schemas
 from core.authentication import create_access_token
@@ -67,22 +67,5 @@ def get_user_by_id_service(id,session):
         user = get_user_by_id(id,session)
         if user:
             return user
-    except Exception as e:
-        raise Exception(str(e))
-
-
-def get_users_role_service(session):
-    try:
-        users = get_users(session)
-        if users:
-            return users
-    except Exception as e:
-        raise Exception(str(e))
-
-def get_admins_role_service(session):
-    try:
-        admins = get_admins(session)
-        if admins:
-            return admins
     except Exception as e:
         raise Exception(str(e))
