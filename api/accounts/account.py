@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends, HTTPException, Query
 from schemas.accounts.accounts_schemas import CreateAccount
 from schemas.database_model import get_session,Role
-from services.accounts.account_service import create_account_service, delete_account_service, check_balance_service, deposit_service, withdraw_service, transfer_service, get_account_service
+from services.accounts.account_service import create_account_service, delete_account_service, check_balance_service, get_account_service
 from fastapi import Request
 from schemas.accounts.accounts_responseModel import BalanceResponse
 
@@ -16,7 +16,7 @@ def create_account(request:Request,account:CreateAccount,session=Depends(get_ses
     raise HTTPException(status_code=404,detail='not authorize')
     
 @account_route.delete('/account/delete/{id}')
-def delete_account(id,session=Depends(get_session)):
+def delete_account(request:Request,id,session=Depends(get_session)):
     data = request.state.current_user
     role = data.get('role')
     if role == Role.ADMIN:

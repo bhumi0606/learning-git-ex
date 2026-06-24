@@ -46,3 +46,4 @@ def get_transactions_service(sort_by,search_by,filter_by,max_amount,min_amount,s
             return transactions
     except Exception as e:
         raise Exception(str(e))
+    
