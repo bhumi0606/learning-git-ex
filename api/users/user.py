@@ -13,7 +13,7 @@ from typing import List
 
 user_route = APIRouter()
 
-@user_route.post('/user/login')
+@user_route.post('/user/login',status_code=200)
 @limiter.limit('3/day')
 @logging_decorator
 def login(request:Request,user:OAuth2PasswordRequestForm=Depends(),session=Depends(get_session)):
@@ -27,7 +27,7 @@ def login(request:Request,user:OAuth2PasswordRequestForm=Depends(),session=Depen
         }
     raise HTTPException(status_code=404,detail='incorrect username and password')
     
-@user_route.post('/refresh_token')
+@user_route.post('/refresh_token',status_code=200)
 def get_refresh_token(token:str):
     token = refresh_token(token)
     if token:
@@ -37,7 +37,7 @@ def get_refresh_token(token:str):
         }
     raise HTTPException(status_code=404,detail='invalid token')
     
-@user_route.post('/user/create')
+@user_route.post('/user/create',status_code=201)
 def create_user(user:user_schemas.CreateUser,session=Depends(get_session)):
     result = create_user_service(user,session)
     if result:
@@ -46,7 +46,7 @@ def create_user(user:user_schemas.CreateUser,session=Depends(get_session)):
         }
     raise HTTPException(status_code=404,detail='user not created.')
     
-@user_route.put('/user/update')
+@user_route.put('/user/update',status_code=200)
 def update_user(request:Request,user:user_schemas.UpdateUser,session=Depends(get_session)):
     data = request.state.current_user
     email = data.get('email')
@@ -56,7 +56,7 @@ def update_user(request:Request,user:user_schemas.UpdateUser,session=Depends(get
     raise HTTPException(status_code=404,detail='user not updated.')
     
 
-@user_route.delete('/user/delete')
+@user_route.delete('/user/delete',status_code=200)
 def delete_user(request:Request,session=Depends(get_session)):
     data = request.state.current_user
     email = data.get('email')
@@ -66,7 +66,7 @@ def delete_user(request:Request,session=Depends(get_session)):
     raise HTTPException(status_code=404,detail='user not deleted.')
     
 
-@user_route.get('/user',response_model=List[UserResponse])
+@user_route.get('/user',response_model=List[UserResponse],status_code=200)
 def get_users(
         request:Request,
         username = Query(
@@ -94,12 +94,6 @@ def get_users(
     if user:
         return user
     raise HTTPException(status_code=404,detail='user not found.')
-        
-    # else:
-    #     users = get_users_service(session)
-    #     if users:
-    #         return users
-    #     raise HTTPException(status_code=404,detail='user not found.')
         
 
 # @user_route.get('/user')
