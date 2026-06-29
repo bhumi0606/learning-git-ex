@@ -7,24 +7,25 @@ from schemas.accounts.accounts_responseModel import BalanceResponse
 
 account_route = APIRouter()
 
-@account_route.post('/account/create')
+@account_route.post('/account/create',status_code=201)
 def create_account(request:Request,account:CreateAccount,session=Depends(get_session)):
     data = request.state.current_user
     role = data.get('role')
-    if role == Role.ADMIN:
+    if role == str(Role.ADMIN):
         return create_account_service(account,session)
+    
     raise HTTPException(status_code=404,detail='not authorize')
     
-@account_route.delete('/account/delete/{id}')
+@account_route.delete('/account/delete/{id}',status_code=200)
 def delete_account(request:Request,id,session=Depends(get_session)):
     data = request.state.current_user
     role = data.get('role')
-    if role == Role.ADMIN:
+    if role == str(Role.ADMIN):
         return delete_account_service(id,session)
     raise HTTPException(status_code=404,detail='account not deleted.')
    
 
-@account_route.get('/account/balance',response_model=BalanceResponse)
+@account_route.get('/account/balance',status_code=200)
 def check_balance(request:Request,session=Depends(get_session)):
     data = request.state.current_user
     email = data.get('email')

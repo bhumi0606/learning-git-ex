@@ -14456,3 +14456,750 @@ fastapi.exceptions.ResponseValidationError: 1 validation error:
 2026-06-26 12:54:32,376 | INFO | httpx | HTTP Request: PUT http://testserver/user/update "HTTP/1.1 200 OK" 
 2026-06-26 12:54:32,403 | INFO | httpx | HTTP Request: DELETE http://testserver/user/delete "HTTP/1.1 200 OK" 
 2026-06-26 12:54:32,420 | INFO | httpx | HTTP Request: GET http://testserver/user?username=test&sort_query=created_at&search_by=testing1%40gmail.com&filter_by=user "HTTP/1.1 200 OK" 
+2026-06-26 13:06:49,422 | INFO | decorators.logging_decorator | API Called:login 
+2026-06-26 13:06:49,798 | INFO | decorators.logging_decorator | API finished:login 
+2026-06-26 13:06:49,798 | INFO | decorators.logging_decorator | API Process time:0.38272299999994175 
+2026-06-26 13:08:29,116 | INFO | httpx | HTTP Request: POST http://testserver/account/create "HTTP/1.1 404 Not Found" 
+2026-06-26 13:30:35,028 | INFO | httpx | HTTP Request: POST http://testserver/account/create "HTTP/1.1 404 Not Found" 
+2026-06-26 15:59:15,763 | INFO | httpx | HTTP Request: DELETE http://testserver/account/delete/1 "HTTP/1.1 404 Not Found" 
+2026-06-26 16:04:00,624 | INFO | httpx | HTTP Request: DELETE http://testserver/account/delete/1?id=1 "HTTP/1.1 404 Not Found" 
+2026-06-26 16:04:17,615 | INFO | httpx | HTTP Request: DELETE http://testserver/account/delete?id=1 "HTTP/1.1 404 Not Found" 
+2026-06-26 16:04:40,774 | INFO | httpx | HTTP Request: DELETE http://testserver/account/delete/1 "HTTP/1.1 404 Not Found" 
+2026-06-26 16:09:43,516 | INFO | httpx | HTTP Request: DELETE http://testserver/account/delete/1 "HTTP/1.1 404 Not Found" 
+2026-06-26 16:13:44,464 | ERROR | exception_handler | Exception: DELETE http://testserver/account/delete/1 Invalid header padding 
+  + Exception Group Traceback (most recent call last):
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 81, in collapse_excgroups
+  |     yield
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 192, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\_backends\_asyncio.py", line 799, in __aexit__
+  |     raise BaseExceptionGroup(
+  | exceptiongroup.ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    |     await self.app(scope, receive, _send)
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    |     with recv_stream, send_stream, collapse_excgroups():
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    |     self.gen.throw(typ, value, traceback)
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    |     raise exc
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |   File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 29, in token_verify
+    |     raise Exception(str(e))
+    | Exception: Invalid header padding
+    +------------------------------------
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 29, in token_verify
+    raise Exception(str(e))
+Exception: Invalid header padding
+2026-06-26 16:16:55,827 | INFO | httpx | HTTP Request: DELETE http://testserver/account/delete/1 "HTTP/1.1 404 Not Found" 
+2026-06-26 16:30:40,504 | INFO | httpx | HTTP Request: GET http://testserver/accounts "HTTP/1.1 200 OK" 
+2026-06-26 16:31:04,150 | INFO | decorators.logging_decorator | API Called:login 
+2026-06-26 16:31:04,688 | INFO | decorators.logging_decorator | API finished:login 
+2026-06-26 16:31:04,689 | INFO | decorators.logging_decorator | API Process time:0.5367237999998906 
+2026-06-26 16:31:30,955 | INFO | httpx | HTTP Request: GET http://testserver/accounts "HTTP/1.1 200 OK" 
+2026-06-26 16:31:51,492 | INFO | httpx | HTTP Request: GET http://testserver/accounts "HTTP/1.1 200 OK" 
+2026-06-26 16:32:53,438 | ERROR | exception_handler | Exception: GET http://testserver/account/balance 1 validation error:
+  {'type': 'missing', 'loc': ('response', 'account_number'), 'msg': 'Field required', 'input': {'balance': 500}}
+
+  File "D:\Python Basic Internship\alembic\Mini Project 2\api\accounts\account.py", line 27, in check_balance
+    GET /account/balance 
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\routing.py", line 680, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 134, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 120, in app
+    response = await f(request)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 695, in app
+    content = await serialize_response(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 300, in serialize_response
+    raise ResponseValidationError(
+fastapi.exceptions.ResponseValidationError: 1 validation error:
+  {'type': 'missing', 'loc': ('response', 'account_number'), 'msg': 'Field required', 'input': {'balance': 500}}
+
+  File "D:\Python Basic Internship\alembic\Mini Project 2\api\accounts\account.py", line 27, in check_balance
+    GET /account/balance
+2026-06-26 16:33:43,314 | ERROR | exception_handler | Exception: GET http://testserver/account/balance 1 validation error:
+  {'type': 'missing', 'loc': ('response', 'account_number'), 'msg': 'Field required', 'input': {'balance': 500}}
+
+  File "D:\Python Basic Internship\alembic\Mini Project 2\api\accounts\account.py", line 27, in check_balance
+    GET /account/balance 
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\routing.py", line 680, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 134, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 120, in app
+    response = await f(request)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 695, in app
+    content = await serialize_response(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 300, in serialize_response
+    raise ResponseValidationError(
+fastapi.exceptions.ResponseValidationError: 1 validation error:
+  {'type': 'missing', 'loc': ('response', 'account_number'), 'msg': 'Field required', 'input': {'balance': 500}}
+
+  File "D:\Python Basic Internship\alembic\Mini Project 2\api\accounts\account.py", line 27, in check_balance
+    GET /account/balance
+2026-06-26 16:34:17,213 | ERROR | exception_handler | Exception: GET http://testserver/account/balance 1 validation error:
+  {'type': 'missing', 'loc': ('response', 'account_number'), 'msg': 'Field required', 'input': {'balance': 500}}
+
+  File "D:\Python Basic Internship\alembic\Mini Project 2\api\accounts\account.py", line 27, in check_balance
+    GET /account/balance 
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\routing.py", line 680, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 134, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 120, in app
+    response = await f(request)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 695, in app
+    content = await serialize_response(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 300, in serialize_response
+    raise ResponseValidationError(
+fastapi.exceptions.ResponseValidationError: 1 validation error:
+  {'type': 'missing', 'loc': ('response', 'account_number'), 'msg': 'Field required', 'input': {'balance': 500}}
+
+  File "D:\Python Basic Internship\alembic\Mini Project 2\api\accounts\account.py", line 27, in check_balance
+    GET /account/balance
+2026-06-26 16:35:10,417 | ERROR | exception_handler | Exception: GET http://testserver/account/balance 1 validation error:
+  {'type': 'missing', 'loc': ('response', 'account_number'), 'msg': 'Field required', 'input': {'balance': <MagicMock name='check_balance_service()' id='1950031505216'>}}
+
+  File "D:\Python Basic Internship\alembic\Mini Project 2\api\accounts\account.py", line 27, in check_balance
+    GET /account/balance 
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\routing.py", line 680, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 134, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 120, in app
+    response = await f(request)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 695, in app
+    content = await serialize_response(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 300, in serialize_response
+    raise ResponseValidationError(
+fastapi.exceptions.ResponseValidationError: 1 validation error:
+  {'type': 'missing', 'loc': ('response', 'account_number'), 'msg': 'Field required', 'input': {'balance': <MagicMock name='check_balance_service()' id='1950031505216'>}}
+
+  File "D:\Python Basic Internship\alembic\Mini Project 2\api\accounts\account.py", line 27, in check_balance
+    GET /account/balance
+2026-06-26 16:55:18,246 | INFO | httpx | HTTP Request: GET http://testserver/accounts?sory_by=&search=&filter_by=&max_balance=&min_balance= "HTTP/1.1 200 OK" 
+2026-06-26 16:56:00,011 | ERROR | exception_handler | Exception: GET http://testserver/account/balance 1 validation error:
+  {'type': 'missing', 'loc': ('response', 'account_number'), 'msg': 'Field required', 'input': {'balance': <MagicMock name='mock.balance' id='2113907967600'>}}
+
+  File "D:\Python Basic Internship\alembic\Mini Project 2\api\accounts\account.py", line 27, in check_balance
+    GET /account/balance 
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\routing.py", line 680, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 134, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 120, in app
+    response = await f(request)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 695, in app
+    content = await serialize_response(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 300, in serialize_response
+    raise ResponseValidationError(
+fastapi.exceptions.ResponseValidationError: 1 validation error:
+  {'type': 'missing', 'loc': ('response', 'account_number'), 'msg': 'Field required', 'input': {'balance': <MagicMock name='mock.balance' id='2113907967600'>}}
+
+  File "D:\Python Basic Internship\alembic\Mini Project 2\api\accounts\account.py", line 27, in check_balance
+    GET /account/balance
+2026-06-26 16:56:00,934 | INFO | httpx | HTTP Request: GET http://testserver/accounts?sory_by=&search=&filter_by=&max_balance=&min_balance= "HTTP/1.1 200 OK" 
+2026-06-26 16:58:20,789 | ERROR | exception_handler | Exception: GET http://testserver/account/balance 1 validation error:
+  {'type': 'missing', 'loc': ('response', 'account_number'), 'msg': 'Field required', 'input': {'balance': 3840}}
+
+  File "D:\Python Basic Internship\alembic\Mini Project 2\api\accounts\account.py", line 27, in check_balance
+    GET /account/balance 
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\routing.py", line 680, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 134, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 120, in app
+    response = await f(request)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 695, in app
+    content = await serialize_response(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 300, in serialize_response
+    raise ResponseValidationError(
+fastapi.exceptions.ResponseValidationError: 1 validation error:
+  {'type': 'missing', 'loc': ('response', 'account_number'), 'msg': 'Field required', 'input': {'balance': 3840}}
+
+  File "D:\Python Basic Internship\alembic\Mini Project 2\api\accounts\account.py", line 27, in check_balance
+    GET /account/balance
+2026-06-26 16:58:21,792 | INFO | httpx | HTTP Request: GET http://testserver/accounts?sory_by=&search=&filter_by=&max_balance=&min_balance= "HTTP/1.1 200 OK" 
+2026-06-29 10:54:52,036 | ERROR | exception_handler | Exception: GET http://testserver/account/balance Signature has expired 
+  + Exception Group Traceback (most recent call last):
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 81, in collapse_excgroups
+  |     yield
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 192, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\_backends\_asyncio.py", line 799, in __aexit__
+  |     raise BaseExceptionGroup(
+  | exceptiongroup.ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    |     await self.app(scope, receive, _send)
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    |     with recv_stream, send_stream, collapse_excgroups():
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    |     self.gen.throw(typ, value, traceback)
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    |     raise exc
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |   File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 29, in token_verify
+    |     raise Exception(str(e))
+    | Exception: Signature has expired
+    +------------------------------------
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 29, in token_verify
+    raise Exception(str(e))
+Exception: Signature has expired
+2026-06-29 10:54:54,823 | ERROR | exception_handler | Exception: GET http://testserver/accounts?sory_by=&search=&filter_by=&max_balance=&min_balance= Signature has expired 
+  + Exception Group Traceback (most recent call last):
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 81, in collapse_excgroups
+  |     yield
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 192, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\_backends\_asyncio.py", line 799, in __aexit__
+  |     raise BaseExceptionGroup(
+  | exceptiongroup.ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    |     await self.app(scope, receive, _send)
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    |     with recv_stream, send_stream, collapse_excgroups():
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    |     self.gen.throw(typ, value, traceback)
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    |     raise exc
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |   File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 29, in token_verify
+    |     raise Exception(str(e))
+    | Exception: Signature has expired
+    +------------------------------------
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 29, in token_verify
+    raise Exception(str(e))
+Exception: Signature has expired
+2026-06-29 10:56:44,115 | ERROR | exception_handler | Exception: POST http://testserver/account/create Signature has expired 
+  + Exception Group Traceback (most recent call last):
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 81, in collapse_excgroups
+  |     yield
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 192, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\_backends\_asyncio.py", line 799, in __aexit__
+  |     raise BaseExceptionGroup(
+  | exceptiongroup.ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    |     await self.app(scope, receive, _send)
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    |     with recv_stream, send_stream, collapse_excgroups():
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    |     self.gen.throw(typ, value, traceback)
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    |     raise exc
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |   File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 29, in token_verify
+    |     raise Exception(str(e))
+    | Exception: Signature has expired
+    +------------------------------------
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 29, in token_verify
+    raise Exception(str(e))
+Exception: Signature has expired
+2026-06-29 10:56:46,709 | ERROR | exception_handler | Exception: DELETE http://testserver/account/delete/1 Signature has expired 
+  + Exception Group Traceback (most recent call last):
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 81, in collapse_excgroups
+  |     yield
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 192, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\_backends\_asyncio.py", line 799, in __aexit__
+  |     raise BaseExceptionGroup(
+  | exceptiongroup.ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    |     await self.app(scope, receive, _send)
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    |     with recv_stream, send_stream, collapse_excgroups():
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    |     self.gen.throw(typ, value, traceback)
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    |     raise exc
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |   File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 29, in token_verify
+    |     raise Exception(str(e))
+    | Exception: Signature has expired
+    +------------------------------------
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 29, in token_verify
+    raise Exception(str(e))
+Exception: Signature has expired
+2026-06-29 10:56:48,524 | ERROR | exception_handler | Exception: GET http://testserver/account/balance Signature has expired 
+  + Exception Group Traceback (most recent call last):
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 81, in collapse_excgroups
+  |     yield
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 192, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\_backends\_asyncio.py", line 799, in __aexit__
+  |     raise BaseExceptionGroup(
+  | exceptiongroup.ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    |     await self.app(scope, receive, _send)
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    |     with recv_stream, send_stream, collapse_excgroups():
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    |     self.gen.throw(typ, value, traceback)
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    |     raise exc
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |   File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 29, in token_verify
+    |     raise Exception(str(e))
+    | Exception: Signature has expired
+    +------------------------------------
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 29, in token_verify
+    raise Exception(str(e))
+Exception: Signature has expired
+2026-06-29 10:56:49,721 | ERROR | exception_handler | Exception: GET http://testserver/accounts?sory_by=&search=&filter_by=&max_balance=&min_balance= Signature has expired 
+  + Exception Group Traceback (most recent call last):
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 81, in collapse_excgroups
+  |     yield
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 192, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\_backends\_asyncio.py", line 799, in __aexit__
+  |     raise BaseExceptionGroup(
+  | exceptiongroup.ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    |     await self.app(scope, receive, _send)
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    |     with recv_stream, send_stream, collapse_excgroups():
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    |     self.gen.throw(typ, value, traceback)
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    |     raise exc
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |   File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 29, in token_verify
+    |     raise Exception(str(e))
+    | Exception: Signature has expired
+    +------------------------------------
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 29, in token_verify
+    raise Exception(str(e))
+Exception: Signature has expired
+2026-06-29 10:58:29,611 | INFO | decorators.logging_decorator | API Called:login 
+2026-06-29 10:58:30,569 | INFO | decorators.logging_decorator | API finished:login 
+2026-06-29 10:58:30,569 | INFO | decorators.logging_decorator | API Process time:0.9583925000000022 
+2026-06-29 10:59:22,428 | INFO | decorators.logging_decorator | API Called:login 
+2026-06-29 10:59:23,083 | INFO | decorators.logging_decorator | API finished:login 
+2026-06-29 10:59:23,083 | INFO | decorators.logging_decorator | API Process time:0.6610512999999969 
+2026-06-29 11:00:35,084 | INFO | httpx | HTTP Request: POST http://testserver/account/create "HTTP/1.1 404 Not Found" 
+2026-06-29 11:00:35,406 | INFO | httpx | HTTP Request: DELETE http://testserver/account/delete/1 "HTTP/1.1 404 Not Found" 
+2026-06-29 11:00:35,427 | INFO | httpx | HTTP Request: GET http://testserver/accounts?sory_by=&search=&filter_by=&max_balance=&min_balance= "HTTP/1.1 200 OK" 
+2026-06-29 11:05:19,775 | INFO | httpx | HTTP Request: POST http://testserver/account/create "HTTP/1.1 404 Not Found" 
+2026-06-29 11:05:20,175 | INFO | httpx | HTTP Request: DELETE http://testserver/account/delete/1 "HTTP/1.1 404 Not Found" 
+2026-06-29 11:05:20,201 | INFO | httpx | HTTP Request: GET http://testserver/accounts?sory_by=&search=&filter_by=&max_balance=&min_balance= "HTTP/1.1 200 OK" 
+2026-06-29 11:06:23,271 | INFO | httpx | HTTP Request: POST http://testserver/account/create "HTTP/1.1 404 Not Found" 
+2026-06-29 11:06:23,610 | INFO | httpx | HTTP Request: DELETE http://testserver/account/delete/1 "HTTP/1.1 404 Not Found" 
+2026-06-29 11:06:23,634 | INFO | httpx | HTTP Request: GET http://testserver/accounts?sory_by=&search=&filter_by=&max_balance=&min_balance= "HTTP/1.1 200 OK" 
+2026-06-29 11:09:20,474 | INFO | httpx | HTTP Request: POST http://testserver/account/create "HTTP/1.1 404 Not Found" 
+2026-06-29 11:09:20,824 | INFO | httpx | HTTP Request: DELETE http://testserver/account/delete/1 "HTTP/1.1 404 Not Found" 
+2026-06-29 11:09:20,846 | INFO | httpx | HTTP Request: GET http://testserver/accounts?sory_by=&search=&filter_by=&max_balance=&min_balance= "HTTP/1.1 200 OK" 
+2026-06-29 11:16:00,646 | ERROR | exception_handler | Exception: POST http://127.0.0.1:8000/account/create Invalid token type. Token must be a <class 'bytes'> 
+  + Exception Group Traceback (most recent call last):
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 81, in collapse_excgroups
+  |     yield
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 192, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\_backends\_asyncio.py", line 799, in __aexit__
+  |     raise BaseExceptionGroup(
+  | exceptiongroup.ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    |     await self.app(scope, receive, _send)
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    |     with recv_stream, send_stream, collapse_excgroups():
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    |     self.gen.throw(typ, value, traceback)
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    |     raise exc
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |   File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 29, in token_verify
+    |     raise Exception(str(e))
+    | Exception: Invalid token type. Token must be a <class 'bytes'>
+    +------------------------------------
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 29, in token_verify
+    raise Exception(str(e))
+Exception: Invalid token type. Token must be a <class 'bytes'>
+2026-06-29 11:17:20,500 | INFO | httpx | HTTP Request: POST http://testserver/account/create "HTTP/1.1 201 Created" 
+2026-06-29 11:17:20,525 | INFO | httpx | HTTP Request: DELETE http://testserver/account/delete/1 "HTTP/1.1 200 OK" 
+2026-06-29 11:17:20,540 | INFO | httpx | HTTP Request: GET http://testserver/accounts?sory_by=&search=&filter_by=&max_balance=&min_balance= "HTTP/1.1 200 OK" 
+2026-06-29 11:18:05,944 | INFO | decorators.logging_decorator | API Called:login 
+2026-06-29 11:18:06,567 | INFO | decorators.logging_decorator | API finished:login 
+2026-06-29 11:18:06,567 | INFO | decorators.logging_decorator | API Process time:0.6220989999999347 
+2026-06-29 11:18:46,541 | INFO | httpx | HTTP Request: POST http://testserver/account/create "HTTP/1.1 201 Created" 
+2026-06-29 11:18:46,568 | INFO | httpx | HTTP Request: DELETE http://testserver/account/delete/1 "HTTP/1.1 200 OK" 
+2026-06-29 11:18:46,589 | ERROR | exception_handler | Exception: GET http://testserver/account/balance 1 validation error:
+  {'type': 'missing', 'loc': ('response', 'account_number'), 'msg': 'Field required', 'input': {'balance': 3840}}
+
+  File "D:\Python Basic Internship\alembic\Mini Project 2\api\accounts\account.py", line 28, in check_balance
+    GET /account/balance 
+  + Exception Group Traceback (most recent call last):
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 81, in collapse_excgroups
+  |     yield
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 192, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\_backends\_asyncio.py", line 799, in __aexit__
+  |     raise BaseExceptionGroup(
+  | exceptiongroup.ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    |     await self.app(scope, receive, _send)
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    |     with recv_stream, send_stream, collapse_excgroups():
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    |     self.gen.throw(typ, value, traceback)
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    |     raise exc
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |   File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 29, in token_verify
+    |     raise Exception(str(e))
+    | Exception: 1 validation error:
+    |   {'type': 'missing', 'loc': ('response', 'account_number'), 'msg': 'Field required', 'input': {'balance': 3840}}
+    | 
+    |   File "D:\Python Basic Internship\alembic\Mini Project 2\api\accounts\account.py", line 28, in check_balance
+    |     GET /account/balance
+    +------------------------------------
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 29, in token_verify
+    raise Exception(str(e))
+Exception: 1 validation error:
+  {'type': 'missing', 'loc': ('response', 'account_number'), 'msg': 'Field required', 'input': {'balance': 3840}}
+
+  File "D:\Python Basic Internship\alembic\Mini Project 2\api\accounts\account.py", line 28, in check_balance
+    GET /account/balance
+2026-06-29 11:18:47,291 | INFO | httpx | HTTP Request: GET http://testserver/accounts?sory_by=&search=&filter_by=&max_balance=&min_balance= "HTTP/1.1 200 OK" 
+2026-06-29 11:25:57,848 | INFO | httpx | HTTP Request: POST http://testserver/account/create "HTTP/1.1 201 Created" 
+2026-06-29 11:25:57,866 | INFO | httpx | HTTP Request: DELETE http://testserver/account/delete/1 "HTTP/1.1 200 OK" 
+2026-06-29 11:25:57,879 | INFO | httpx | HTTP Request: GET http://testserver/account/balance "HTTP/1.1 200 OK" 
+2026-06-29 11:25:57,900 | INFO | httpx | HTTP Request: GET http://testserver/accounts?sory_by=&search=&filter_by=&max_balance=&min_balance= "HTTP/1.1 200 OK" 

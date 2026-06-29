@@ -95,7 +95,6 @@ def get_users(
         return user
     raise HTTPException(status_code=404,detail='user not found.')
         
-
 # @user_route.get('/user')
 # def get_user(request:Request,id,session=Depends(get_session)):
 #     data = request.state.current_user
