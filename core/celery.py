@@ -3,15 +3,16 @@ import smtplib,ssl
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
+from core.config import BROKER, EMAIL_PASS
+
 celery_app = Celery(
     "tasks",
-    broker="redis://localhost:6379/0"
+    broker=BROKER
 )
 
-
-def func_email_send(sender_email,receiver_email):
+def func_email_send(sender_email,receiver_email,message):
     smtp_server = "smtp.gmail.com"
-    password = "jjbi qkon dkck yqsu"
+    password = EMAIL_PASS
     sender_email = sender_email
     receiver_email = receiver_email
 

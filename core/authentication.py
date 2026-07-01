@@ -1,4 +1,6 @@
+from fastapi import HTTPException, Request
 from fastapi.security import OAuth2PasswordBearer
+from schemas.database_model import Role
 from schemas.users import user_schemas
 from datetime import datetime, timedelta
 from core.config import ACCESS_TOKEN_TIME, REFRESH_TOKEN_TIME, SECRET_KEY, ALGORITHM
@@ -25,3 +27,15 @@ def refresh_token(token):
         )
         token = create_access_token(data,refresh_token=True)
         return token
+    
+def admin_require(request:Request):
+    data = request.state.current_user
+    role = data.get('role')
+    if role != str(Role.ADMIN):
+        raise HTTPException(status_code=404,detail='admin require')
+    
+def user_require(request:Request):
+    data = request.state.current_user
+    role = data.get('role')
+    if role != str(Role.USER):
+        raise HTTPException(status_code=404,detail='user require')

@@ -2,8 +2,6 @@ from fastapi import APIRouter, Depends, HTTPException, Query
 from services.transaction.transaction_service import deposit_service, withdraw_service, transfer_service, get_transactions_service
 from schemas.database_model import get_session
 from fastapi import Request
-from typing import List
-from schemas.transaction.transaction_responseModel import BalanceResponse
 
 transaction_route = APIRouter()
 
@@ -15,9 +13,8 @@ def deposit(
                 default = None
             ),
             session=Depends(get_session)):
-    # data = request.state.current_user
-    # email = data.get('email')
-    email = "testing1@gmail.com"
+    data = request.state.current_user
+    email = data.get('email')
     balance = deposit_service(email,amount,description,session)
     if balance:
         return {
@@ -33,9 +30,8 @@ def withdraw(
                 default = None
             ),
             session=Depends(get_session)):
-    # data = request.state.current_user
-    # email = data.get('email')
-    email = "testing1@gmail.com"
+    data = request.state.current_user
+    email = data.get('email')
     balance = withdraw_service(email,amount,description,session)
     if balance:
         return {
@@ -52,9 +48,8 @@ def transfer(
             default = None
         ),
         session=Depends(get_session)):
-    # data = request.state.current_user
-    # email = data.get('email')
-    email = "testing1@gmail.com"
+    data = request.state.current_user
+    email = data.get('email')
     msg = transfer_service(email,to_account,amount,description,session)
     print(msg)
     if msg == "transaction completed.":

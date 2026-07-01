@@ -4,7 +4,7 @@ from schemas.users import user_schemas
 from schemas.database_model import get_session,Role
 from fastapi.security import OAuth2PasswordRequestForm
 from fastapi import Request
-from core.authentication import refresh_token
+from core.authentication import admin_require, refresh_token, user_require
 from middleware.rate_limit import limiter
 from decorators.logging_decorator import logging_decorator
 from typing import Optional
@@ -50,23 +50,17 @@ def create_user(user:user_schemas.CreateUser,session=Depends(get_session)):
     raise HTTPException(status_code=404,detail='user not created.')
     
 @user_route.put('/user/update',status_code=200)
-def update_user(request:Request,user:user_schemas.UpdateUser,session=Depends(get_session)):
+def update_user(request:Request,user:user_schemas.UpdateUser,user_role=Depends(user_require),session=Depends(get_session)):
     data = request.state.current_user
     email = data.get('email')
-    role = data.get('role')
-    if role == str(Role.USER):
-        return update_user_service(email,user,session)
-    raise HTTPException(status_code=404,detail='user not updated.')
+    return update_user_service(email,user,session)
     
 
 @user_route.delete('/user/delete',status_code=200)
-def delete_user(request:Request,session=Depends(get_session)):
+def delete_user(request:Request,user=Depends(admin_require),session=Depends(get_session)):
     data = request.state.current_user
     email = data.get('email')
-    role = data.get('role')
-    if role == str(Role.ADMIN):
-        return delete_user_service(email,session)
-    raise HTTPException(status_code=404,detail='user not deleted.')
+    return delete_user_service(email,session)
     
 
 @user_route.get('/user',response_model=List[UserResponse],status_code=200)

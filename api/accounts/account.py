@@ -1,4 +1,5 @@
 from fastapi import APIRouter, Depends, HTTPException, Query
+from core.authentication import admin_require
 from schemas.accounts.accounts_schemas import CreateAccount
 from schemas.database_model import get_session,Role
 from services.accounts.account_service import create_account_service, delete_account_service, check_balance_service, get_account_service
@@ -8,21 +9,14 @@ from schemas.accounts.accounts_responseModel import BalanceResponse
 account_route = APIRouter()
 
 @account_route.post('/account/create',status_code=201)
-def create_account(request:Request,account:CreateAccount,session=Depends(get_session)):
+def create_account(request:Request,account:CreateAccount,user=Depends(admin_require),session=Depends(get_session)):
     data = request.state.current_user
-    role = data.get('role')
-    if role == str(Role.ADMIN):
-        return create_account_service(account,session)
-    
-    raise HTTPException(status_code=404,detail='not authorize')
+    return create_account_service(account,session)
+
     
 @account_route.delete('/account/delete/{id}',status_code=200)
-def delete_account(request:Request,id,session=Depends(get_session)):
-    data = request.state.current_user
-    role = data.get('role')
-    if role == str(Role.ADMIN):
-        return delete_account_service(id,session)
-    raise HTTPException(status_code=404,detail='account not deleted.')
+def delete_account(request:Request,id,user=Depends(admin_require),session=Depends(get_session)):
+    return delete_account_service(id,session)
    
 
 @account_route.get('/account/balance',status_code=200)
