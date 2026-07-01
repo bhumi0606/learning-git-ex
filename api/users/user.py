@@ -10,6 +10,7 @@ from decorators.logging_decorator import logging_decorator
 from typing import Optional
 from schemas.users.users_responseModel import UserResponse
 from typing import List
+from core.celery import send_email
 
 user_route = APIRouter()
 
@@ -41,8 +42,10 @@ def get_refresh_token(token:str):
 def create_user(user:user_schemas.CreateUser,session=Depends(get_session)):
     result = create_user_service(user,session)
     if result:
+        task = send_email.delay(user.email)
         return {
-            'message': result
+            'message': result,
+            'task_id': task.id
         }
     raise HTTPException(status_code=404,detail='user not created.')
     

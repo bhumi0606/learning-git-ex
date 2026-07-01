@@ -15203,3 +15203,1209 @@ Exception: 1 validation error:
 2026-06-29 11:25:57,866 | INFO | httpx | HTTP Request: DELETE http://testserver/account/delete/1 "HTTP/1.1 200 OK" 
 2026-06-29 11:25:57,879 | INFO | httpx | HTTP Request: GET http://testserver/account/balance "HTTP/1.1 200 OK" 
 2026-06-29 11:25:57,900 | INFO | httpx | HTTP Request: GET http://testserver/accounts?sory_by=&search=&filter_by=&max_balance=&min_balance= "HTTP/1.1 200 OK" 
+2026-07-01 15:12:27,775 | ERROR | exception_handler | Exception: POST http://127.0.0.1:8000/user/create (psycopg2.errors.UniqueViolation) duplicate key value violates unique constraint "users_email_key"
+DETAIL:  Key (email)=(testing3@gmail.com) already exists.
+
+[SQL: INSERT INTO users (name, email, password, role, created_at) VALUES (%(name)s, %(email)s, %(password)s, %(role)s, %(created_at)s) RETURNING users.id]
+[parameters: {'name': 'Test User 3', 'email': 'testing3@gmail.com', 'password': '$2b$12$VWyUQz5qL85rziEswo4K/O.wtQ82i8VvufZ7Xl8g1jk94upGxAhru', 'role': 'USER', 'created_at': datetime.datetime(2026, 7, 1, 9, 42, 21, 308611)}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj) 
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "users_email_key"
+DETAIL:  Key (email)=(testing3@gmail.com) already exists.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Python Basic Internship\alembic\Mini Project 2\services\users\user_service.py", line 27, in create_user_service
+    msg = add_user(user,session)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\repo\users\user_repo.py", line 11, in add_user
+    session.commit()
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\session.py", line 2034, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\session.py", line 1315, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\session.py", line 1290, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\session.py", line 4352, in flush
+    self._flush(objects)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\session.py", line 4487, in _flush
+    with util.safe_reraise():
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\util\langhelpers.py", line 122, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\session.py", line 4448, in _flush
+    flush_context.execute()
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 465, in execute
+    rec.execute(self)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 641, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\persistence.py", line 94, in save_obj
+    _emit_insert_statements(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\persistence.py", line 1234, in _emit_insert_statements
+    result = connection.execute(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 1421, in execute
+    return meth(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\sql\elements.py", line 526, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 1643, in _execute_clauseelement
+    ret = self._execute_context(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 2365, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.IntegrityError: (psycopg2.errors.UniqueViolation) duplicate key value violates unique constraint "users_email_key"
+DETAIL:  Key (email)=(testing3@gmail.com) already exists.
+
+[SQL: INSERT INTO users (name, email, password, role, created_at) VALUES (%(name)s, %(email)s, %(password)s, %(role)s, %(created_at)s) RETURNING users.id]
+[parameters: {'name': 'Test User 3', 'email': 'testing3@gmail.com', 'password': '$2b$12$VWyUQz5qL85rziEswo4K/O.wtQ82i8VvufZ7Xl8g1jk94upGxAhru', 'role': 'USER', 'created_at': datetime.datetime(2026, 7, 1, 9, 42, 21, 308611)}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 15, in token_verify
+    return await call_next(request)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\routing.py", line 680, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 134, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 120, in app
+    response = await f(request)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 674, in app
+    raw_response = await run_endpoint_function(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 330, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\concurrency.py", line 32, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\_backends\_asyncio.py", line 2518, in run_sync_in_worker_thread
+    return await future
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\_backends\_asyncio.py", line 1002, in run
+    result = context.run(func, *args)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\api\users\user.py", line 43, in create_user
+    result = create_user_service(user,session)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\services\users\user_service.py", line 31, in create_user_service
+    raise Exception(str(e))
+Exception: (psycopg2.errors.UniqueViolation) duplicate key value violates unique constraint "users_email_key"
+DETAIL:  Key (email)=(testing3@gmail.com) already exists.
+
+[SQL: INSERT INTO users (name, email, password, role, created_at) VALUES (%(name)s, %(email)s, %(password)s, %(role)s, %(created_at)s) RETURNING users.id]
+[parameters: {'name': 'Test User 3', 'email': 'testing3@gmail.com', 'password': '$2b$12$VWyUQz5qL85rziEswo4K/O.wtQ82i8VvufZ7Xl8g1jk94upGxAhru', 'role': 'USER', 'created_at': datetime.datetime(2026, 7, 1, 9, 42, 21, 308611)}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2026-07-01 15:12:46,834 | ERROR | exception_handler | Exception: POST http://127.0.0.1:8000/user/create MISCONF Redis is configured to save RDB snapshots, but it's currently unable to persist to disk. Commands that may modify the data set are disabled, because this instance is configured to report errors during writes if RDB snapshotting fails (stop-writes-on-bgsave-error option). Please check the Redis logs for details about the RDB error. 
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\kombu\utils\functional.py", line 32, in __call__
+    return self.__value__
+AttributeError: 'ChannelPromise' object has no attribute '__value__'. Did you mean: '__call__'?
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\kombu\transport\virtual\base.py", line 951, in create_channel
+    return self._avail_channels.pop()
+IndexError: pop from empty list
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\kombu\connection.py", line 474, in _reraise_as_library_errors
+    yield
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\kombu\connection.py", line 461, in _ensure_connection
+    return retry_over_time(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\kombu\utils\functional.py", line 318, in retry_over_time
+    return fun(*args, **kwargs)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\kombu\connection.py", line 941, in _connection_factory
+    self._connection = self._establish_connection()
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\kombu\connection.py", line 863, in _establish_connection
+    conn = self.transport.establish_connection()
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\kombu\transport\virtual\base.py", line 975, in establish_connection
+    self._avail_channels.append(self.create_channel(self))
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\kombu\transport\virtual\base.py", line 953, in create_channel
+    channel = self.Channel(connection)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\kombu\transport\redis.py", line 757, in __init__
+    self.client.ping()
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\redis\commands\core.py", line 1219, in ping
+    return self.execute_command("PING", **kwargs)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\redis\client.py", line 621, in execute_command
+    return self._execute_command(*args, **options)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\redis\client.py", line 632, in _execute_command
+    return conn.retry.call_with_retry(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\redis\retry.py", line 105, in call_with_retry
+    return do()
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\redis\client.py", line 633, in <lambda>
+    lambda: self._send_command_parse_response(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\redis\client.py", line 604, in _send_command_parse_response
+    return self.parse_response(conn, command_name, **options)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\redis\client.py", line 651, in parse_response
+    response = connection.read_response()
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\redis\connection.py", line 672, in read_response
+    raise response
+redis.exceptions.ResponseError: MISCONF Redis is configured to save RDB snapshots, but it's currently unable to persist to disk. Commands that may modify the data set are disabled, because this instance is configured to report errors during writes if RDB snapshotting fails (stop-writes-on-bgsave-error option). Please check the Redis logs for details about the RDB error.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 15, in token_verify
+    return await call_next(request)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\routing.py", line 680, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 134, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 120, in app
+    response = await f(request)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 674, in app
+    raw_response = await run_endpoint_function(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 330, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\concurrency.py", line 32, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\_backends\_asyncio.py", line 2518, in run_sync_in_worker_thread
+    return await future
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\_backends\_asyncio.py", line 1002, in run
+    result = context.run(func, *args)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\api\users\user.py", line 45, in create_user
+    task = send_email.delay(user.email)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\celery\app\task.py", line 463, in delay
+    return self.apply_async(args, kwargs)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\celery\app\task.py", line 627, in apply_async
+    return app.send_task(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\celery\app\base.py", line 969, in send_task
+    amqp.send_task_message(P, name, message, **options)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\celery\app\amqp.py", line 559, in send_task_message
+    ret = producer.publish(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\kombu\messaging.py", line 190, in publish
+    return _publish(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\kombu\connection.py", line 558, in _ensured
+    return fun(*args, **kwargs)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\kombu\messaging.py", line 200, in _publish
+    channel = self.channel
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\kombu\messaging.py", line 224, in _get_channel
+    channel = self._channel = channel()
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\kombu\utils\functional.py", line 34, in __call__
+    value = self.__value__ = self.__contract__()
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\kombu\messaging.py", line 240, in <lambda>
+    channel = ChannelPromise(lambda: connection.default_channel)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\kombu\connection.py", line 960, in default_channel
+    self._ensure_connection(**conn_opts)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\kombu\connection.py", line 460, in _ensure_connection
+    with ctx():
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\kombu\connection.py", line 478, in _reraise_as_library_errors
+    raise ConnectionError(str(exc)) from exc
+kombu.exceptions.OperationalError: MISCONF Redis is configured to save RDB snapshots, but it's currently unable to persist to disk. Commands that may modify the data set are disabled, because this instance is configured to report errors during writes if RDB snapshotting fails (stop-writes-on-bgsave-error option). Please check the Redis logs for details about the RDB error.
+2026-07-01 15:20:35,534 | ERROR | exception_handler | Exception: POST http://127.0.0.1:8000/user/create (psycopg2.errors.UniqueViolation) duplicate key value violates unique constraint "users_email_key"
+DETAIL:  Key (email)=(testing4@gmail.com) already exists.
+
+[SQL: INSERT INTO users (name, email, password, role, created_at) VALUES (%(name)s, %(email)s, %(password)s, %(role)s, %(created_at)s) RETURNING users.id]
+[parameters: {'name': 'Test User 4', 'email': 'testing4@gmail.com', 'password': '$2b$12$P3lUiIR3YIBvLfH61BuNFeU3MUbLe0oDXT/5Sywgl8VT8.OrrcKcG', 'role': 'USER', 'created_at': datetime.datetime(2026, 7, 1, 9, 50, 29, 163760)}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj) 
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "users_email_key"
+DETAIL:  Key (email)=(testing4@gmail.com) already exists.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Python Basic Internship\alembic\Mini Project 2\services\users\user_service.py", line 27, in create_user_service
+    msg = add_user(user,session)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\repo\users\user_repo.py", line 11, in add_user
+    session.commit()
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\session.py", line 2034, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\session.py", line 1315, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\session.py", line 1290, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\session.py", line 4352, in flush
+    self._flush(objects)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\session.py", line 4487, in _flush
+    with util.safe_reraise():
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\util\langhelpers.py", line 122, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\session.py", line 4448, in _flush
+    flush_context.execute()
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 465, in execute
+    rec.execute(self)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 641, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\persistence.py", line 94, in save_obj
+    _emit_insert_statements(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\persistence.py", line 1234, in _emit_insert_statements
+    result = connection.execute(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 1421, in execute
+    return meth(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\sql\elements.py", line 526, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 1643, in _execute_clauseelement
+    ret = self._execute_context(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 2365, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.IntegrityError: (psycopg2.errors.UniqueViolation) duplicate key value violates unique constraint "users_email_key"
+DETAIL:  Key (email)=(testing4@gmail.com) already exists.
+
+[SQL: INSERT INTO users (name, email, password, role, created_at) VALUES (%(name)s, %(email)s, %(password)s, %(role)s, %(created_at)s) RETURNING users.id]
+[parameters: {'name': 'Test User 4', 'email': 'testing4@gmail.com', 'password': '$2b$12$P3lUiIR3YIBvLfH61BuNFeU3MUbLe0oDXT/5Sywgl8VT8.OrrcKcG', 'role': 'USER', 'created_at': datetime.datetime(2026, 7, 1, 9, 50, 29, 163760)}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 15, in token_verify
+    return await call_next(request)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\routing.py", line 680, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 134, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 120, in app
+    response = await f(request)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 674, in app
+    raw_response = await run_endpoint_function(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 330, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\concurrency.py", line 32, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\_backends\_asyncio.py", line 2518, in run_sync_in_worker_thread
+    return await future
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\_backends\_asyncio.py", line 1002, in run
+    result = context.run(func, *args)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\api\users\user.py", line 43, in create_user
+    result = create_user_service(user,session)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\services\users\user_service.py", line 31, in create_user_service
+    raise Exception(str(e))
+Exception: (psycopg2.errors.UniqueViolation) duplicate key value violates unique constraint "users_email_key"
+DETAIL:  Key (email)=(testing4@gmail.com) already exists.
+
+[SQL: INSERT INTO users (name, email, password, role, created_at) VALUES (%(name)s, %(email)s, %(password)s, %(role)s, %(created_at)s) RETURNING users.id]
+[parameters: {'name': 'Test User 4', 'email': 'testing4@gmail.com', 'password': '$2b$12$P3lUiIR3YIBvLfH61BuNFeU3MUbLe0oDXT/5Sywgl8VT8.OrrcKcG', 'role': 'USER', 'created_at': datetime.datetime(2026, 7, 1, 9, 50, 29, 163760)}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2026-07-01 15:23:12,039 | ERROR | exception_handler | Exception: POST http://127.0.0.1:8000/user/create [TypeError("'_thread.lock' object is not iterable"), TypeError('vars() argument must have __dict__ attribute')] 
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\encoders.py", line 345, in jsonable_encoder
+    data = dict(obj)
+TypeError: '_thread.lock' object is not iterable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\encoders.py", line 350, in jsonable_encoder
+    data = vars(obj)
+TypeError: vars() argument must have __dict__ attribute
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 15, in token_verify
+    return await call_next(request)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\routing.py", line 680, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 134, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 120, in app
+    response = await f(request)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 695, in app
+    content = await serialize_response(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 317, in serialize_response
+    return jsonable_encoder(response_content)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\encoders.py", line 306, in jsonable_encoder
+    encoded_value = jsonable_encoder(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\encoders.py", line 354, in jsonable_encoder
+    return jsonable_encoder(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\encoders.py", line 306, in jsonable_encoder
+    encoded_value = jsonable_encoder(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\encoders.py", line 354, in jsonable_encoder
+    return jsonable_encoder(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\encoders.py", line 306, in jsonable_encoder
+    encoded_value = jsonable_encoder(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\encoders.py", line 354, in jsonable_encoder
+    return jsonable_encoder(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\encoders.py", line 306, in jsonable_encoder
+    encoded_value = jsonable_encoder(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\encoders.py", line 353, in jsonable_encoder
+    raise ValueError(errors) from e
+ValueError: [TypeError("'_thread.lock' object is not iterable"), TypeError('vars() argument must have __dict__ attribute')]
+2026-07-01 16:09:09,608 | ERROR | exception_handler | Exception: POST http://127.0.0.1:8000/user/create (psycopg2.errors.UniqueViolation) duplicate key value violates unique constraint "users_email_key"
+DETAIL:  Key (email)=(testing4@gmail.com) already exists.
+
+[SQL: INSERT INTO users (name, email, password, role, created_at) VALUES (%(name)s, %(email)s, %(password)s, %(role)s, %(created_at)s) RETURNING users.id]
+[parameters: {'name': 'Test User 4', 'email': 'testing4@gmail.com', 'password': '$2b$12$8Kc0lW6KuenKpgVPTMKWROsPSQrsVEfxKhSIDdPb4gqHZffRXKrVq', 'role': 'USER', 'created_at': datetime.datetime(2026, 7, 1, 10, 39, 2, 865337)}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj) 
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "users_email_key"
+DETAIL:  Key (email)=(testing4@gmail.com) already exists.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Python Basic Internship\alembic\Mini Project 2\services\users\user_service.py", line 27, in create_user_service
+    msg = add_user(user,session)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\repo\users\user_repo.py", line 11, in add_user
+    session.commit()
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\session.py", line 2034, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\session.py", line 1315, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\session.py", line 1290, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\session.py", line 4352, in flush
+    self._flush(objects)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\session.py", line 4487, in _flush
+    with util.safe_reraise():
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\util\langhelpers.py", line 122, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\session.py", line 4448, in _flush
+    flush_context.execute()
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 465, in execute
+    rec.execute(self)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 641, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\persistence.py", line 94, in save_obj
+    _emit_insert_statements(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\persistence.py", line 1234, in _emit_insert_statements
+    result = connection.execute(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 1421, in execute
+    return meth(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\sql\elements.py", line 526, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 1643, in _execute_clauseelement
+    ret = self._execute_context(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 2365, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.IntegrityError: (psycopg2.errors.UniqueViolation) duplicate key value violates unique constraint "users_email_key"
+DETAIL:  Key (email)=(testing4@gmail.com) already exists.
+
+[SQL: INSERT INTO users (name, email, password, role, created_at) VALUES (%(name)s, %(email)s, %(password)s, %(role)s, %(created_at)s) RETURNING users.id]
+[parameters: {'name': 'Test User 4', 'email': 'testing4@gmail.com', 'password': '$2b$12$8Kc0lW6KuenKpgVPTMKWROsPSQrsVEfxKhSIDdPb4gqHZffRXKrVq', 'role': 'USER', 'created_at': datetime.datetime(2026, 7, 1, 10, 39, 2, 865337)}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 15, in token_verify
+    return await call_next(request)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\routing.py", line 680, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 134, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 120, in app
+    response = await f(request)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 674, in app
+    raw_response = await run_endpoint_function(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 330, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\concurrency.py", line 32, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\_backends\_asyncio.py", line 2518, in run_sync_in_worker_thread
+    return await future
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\_backends\_asyncio.py", line 1002, in run
+    result = context.run(func, *args)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\api\users\user.py", line 43, in create_user
+    result = create_user_service(user,session)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\services\users\user_service.py", line 31, in create_user_service
+    raise Exception(str(e))
+Exception: (psycopg2.errors.UniqueViolation) duplicate key value violates unique constraint "users_email_key"
+DETAIL:  Key (email)=(testing4@gmail.com) already exists.
+
+[SQL: INSERT INTO users (name, email, password, role, created_at) VALUES (%(name)s, %(email)s, %(password)s, %(role)s, %(created_at)s) RETURNING users.id]
+[parameters: {'name': 'Test User 4', 'email': 'testing4@gmail.com', 'password': '$2b$12$8Kc0lW6KuenKpgVPTMKWROsPSQrsVEfxKhSIDdPb4gqHZffRXKrVq', 'role': 'USER', 'created_at': datetime.datetime(2026, 7, 1, 10, 39, 2, 865337)}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2026-07-01 16:31:01,855 | ERROR | exception_handler | Exception: POST http://127.0.0.1:8000/user/create bcrypt: no backends available -- recommend you install one (e.g. 'pip install bcrypt') 
+Traceback (most recent call last):
+  File "D:\Python Basic Internship\alembic\Mini Project 2\services\users\user_service.py", line 26, in create_user_service
+    user.password = password_context.hash(user.password)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\passlib\context.py", line 2258, in hash
+    return record.hash(secret, **kwds)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\passlib\utils\handlers.py", line 779, in hash
+    self.checksum = self._calc_checksum(secret)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\passlib\handlers\bcrypt.py", line 591, in _calc_checksum
+    self._stub_requires_backend()
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\passlib\utils\handlers.py", line 2254, in _stub_requires_backend
+    cls.set_backend()
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\passlib\utils\handlers.py", line 2156, in set_backend
+    return owner.set_backend(name, dryrun=dryrun)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\passlib\utils\handlers.py", line 2176, in set_backend
+    raise default_error
+passlib.exc.MissingBackendError: bcrypt: no backends available -- recommend you install one (e.g. 'pip install bcrypt')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 15, in token_verify
+    return await call_next(request)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\fastapi\routing.py", line 2543, in app
+    await route.handle(scope, receive, send)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\fastapi\routing.py", line 1700, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\fastapi\routing.py", line 2598, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\fastapi\routing.py", line 1720, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\fastapi\routing.py", line 1239, in handle
+    await app(scope, receive, send)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\fastapi\routing.py", line 150, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\fastapi\routing.py", line 136, in app
+    response = await f(request)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\fastapi\routing.py", line 690, in app
+    raw_response = await run_endpoint_function(
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\fastapi\routing.py", line 346, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\starlette\concurrency.py", line 34, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\anyio\to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\anyio\_backends\_asyncio.py", line 2596, in run_sync_in_worker_thread
+    return await future
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\anyio\_backends\_asyncio.py", line 1029, in run
+    result = context.run(func, *args)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\api\users\user.py", line 43, in create_user
+    result = create_user_service(user,session)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\services\users\user_service.py", line 31, in create_user_service
+    raise Exception(str(e))
+Exception: bcrypt: no backends available -- recommend you install one (e.g. 'pip install bcrypt')
+2026-07-01 16:31:48,178 | WARNING | passlib.handlers.bcrypt | (trapped) error reading bcrypt version 
+Traceback (most recent call last):
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2026-07-01 16:31:48,200 | ERROR | exception_handler | Exception: POST http://127.0.0.1:8000/user/create password cannot be longer than 72 bytes, truncate manually if necessary (e.g. my_password[:72]) 
+Traceback (most recent call last):
+  File "D:\Python Basic Internship\alembic\Mini Project 2\services\users\user_service.py", line 26, in create_user_service
+    user.password = password_context.hash(user.password)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\passlib\context.py", line 2258, in hash
+    return record.hash(secret, **kwds)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\passlib\utils\handlers.py", line 779, in hash
+    self.checksum = self._calc_checksum(secret)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\passlib\handlers\bcrypt.py", line 591, in _calc_checksum
+    self._stub_requires_backend()
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\passlib\utils\handlers.py", line 2254, in _stub_requires_backend
+    cls.set_backend()
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\passlib\utils\handlers.py", line 2156, in set_backend
+    return owner.set_backend(name, dryrun=dryrun)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\passlib\utils\handlers.py", line 2163, in set_backend
+    return cls.set_backend(name, dryrun=dryrun)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\passlib\utils\handlers.py", line 2188, in set_backend
+    cls._set_backend(name, dryrun)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\passlib\utils\handlers.py", line 2311, in _set_backend
+    super(SubclassBackendMixin, cls)._set_backend(name, dryrun)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\passlib\utils\handlers.py", line 2224, in _set_backend
+    ok = loader(**kwds)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\passlib\handlers\bcrypt.py", line 626, in _load_backend_mixin
+    return mixin_cls._finalize_backend_mixin(name, dryrun)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\passlib\handlers\bcrypt.py", line 421, in _finalize_backend_mixin
+    if detect_wrap_bug(IDENT_2A):
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\passlib\handlers\bcrypt.py", line 380, in detect_wrap_bug
+    if verify(secret, bug_hash):
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\passlib\utils\handlers.py", line 792, in verify
+    return consteq(self._calc_checksum(secret), chk)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\passlib\handlers\bcrypt.py", line 655, in _calc_checksum
+    hash = _bcrypt.hashpw(secret, config)
+ValueError: password cannot be longer than 72 bytes, truncate manually if necessary (e.g. my_password[:72])
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 15, in token_verify
+    return await call_next(request)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\fastapi\routing.py", line 2543, in app
+    await route.handle(scope, receive, send)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\fastapi\routing.py", line 1700, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\fastapi\routing.py", line 2598, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\fastapi\routing.py", line 1720, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\fastapi\routing.py", line 1239, in handle
+    await app(scope, receive, send)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\fastapi\routing.py", line 150, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\fastapi\routing.py", line 136, in app
+    response = await f(request)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\fastapi\routing.py", line 690, in app
+    raw_response = await run_endpoint_function(
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\fastapi\routing.py", line 346, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\starlette\concurrency.py", line 34, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\anyio\to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\anyio\_backends\_asyncio.py", line 2596, in run_sync_in_worker_thread
+    return await future
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\anyio\_backends\_asyncio.py", line 1029, in run
+    result = context.run(func, *args)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\api\users\user.py", line 43, in create_user
+    result = create_user_service(user,session)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\services\users\user_service.py", line 31, in create_user_service
+    raise Exception(str(e))
+Exception: password cannot be longer than 72 bytes, truncate manually if necessary (e.g. my_password[:72])
+2026-07-01 16:35:34,704 | WARNING | passlib.handlers.bcrypt | (trapped) error reading bcrypt version 
+Traceback (most recent call last):
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2026-07-01 16:36:43,562 | ERROR | exception_handler | Exception: POST http://127.0.0.1:8000/user/create (psycopg2.errors.StringDataRightTruncation) value too long for type character varying(20)
+
+[SQL: INSERT INTO users (name, email, password, role, created_at) VALUES (%(name)s, %(email)s, %(password)s, %(role)s, %(created_at)s) RETURNING users.id]
+[parameters: {'name': 'Test User 4', 'email': 'bhumikprajapati2608@gmail.com', 'password': '$2b$12$FQyGDUpx7SvKH9hKOIAIgOAG27JTpeOHiXEOoDKTX6XXZKYDS5Nya', 'role': 'USER', 'created_at': datetime.datetime(2026, 7, 1, 11, 5, 27, 772610)}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h) 
+Traceback (most recent call last):
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.StringDataRightTruncation: value too long for type character varying(20)
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Python Basic Internship\alembic\Mini Project 2\services\users\user_service.py", line 27, in create_user_service
+    msg = add_user(user,session)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\repo\users\user_repo.py", line 11, in add_user
+    session.commit()
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\sqlalchemy\orm\session.py", line 2035, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\sqlalchemy\orm\state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\sqlalchemy\orm\session.py", line 1316, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\sqlalchemy\orm\state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\sqlalchemy\orm\session.py", line 1290, in _prepare_impl
+    self.session.flush()
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\sqlalchemy\orm\session.py", line 4353, in flush
+    self._flush(objects)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\sqlalchemy\orm\session.py", line 4488, in _flush
+    with util.safe_reraise():
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\sqlalchemy\util\langhelpers.py", line 122, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\sqlalchemy\orm\session.py", line 4449, in _flush
+    flush_context.execute()
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 465, in execute
+    rec.execute(self)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 641, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\sqlalchemy\orm\persistence.py", line 94, in save_obj
+    _emit_insert_statements(
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\sqlalchemy\orm\persistence.py", line 1234, in _emit_insert_statements
+    result = connection.execute(
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1421, in execute
+    return meth(
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 526, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1643, in _execute_clauseelement
+    ret = self._execute_context(
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\sqlalchemy\engine\base.py", line 2365, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.DataError: (psycopg2.errors.StringDataRightTruncation) value too long for type character varying(20)
+
+[SQL: INSERT INTO users (name, email, password, role, created_at) VALUES (%(name)s, %(email)s, %(password)s, %(role)s, %(created_at)s) RETURNING users.id]
+[parameters: {'name': 'Test User 4', 'email': 'bhumikprajapati2608@gmail.com', 'password': '$2b$12$FQyGDUpx7SvKH9hKOIAIgOAG27JTpeOHiXEOoDKTX6XXZKYDS5Nya', 'role': 'USER', 'created_at': datetime.datetime(2026, 7, 1, 11, 5, 27, 772610)}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 15, in token_verify
+    return await call_next(request)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\fastapi\routing.py", line 2543, in app
+    await route.handle(scope, receive, send)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\fastapi\routing.py", line 1700, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\fastapi\routing.py", line 2598, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\fastapi\routing.py", line 1720, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\fastapi\routing.py", line 1239, in handle
+    await app(scope, receive, send)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\fastapi\routing.py", line 150, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\fastapi\routing.py", line 136, in app
+    response = await f(request)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\fastapi\routing.py", line 690, in app
+    raw_response = await run_endpoint_function(
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\fastapi\routing.py", line 346, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\starlette\concurrency.py", line 34, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\anyio\to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\anyio\_backends\_asyncio.py", line 2596, in run_sync_in_worker_thread
+    return await future
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\anyio\_backends\_asyncio.py", line 1029, in run
+    result = context.run(func, *args)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\api\users\user.py", line 43, in create_user
+    result = create_user_service(user,session)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\services\users\user_service.py", line 31, in create_user_service
+    raise Exception(str(e))
+Exception: (psycopg2.errors.StringDataRightTruncation) value too long for type character varying(20)
+
+[SQL: INSERT INTO users (name, email, password, role, created_at) VALUES (%(name)s, %(email)s, %(password)s, %(role)s, %(created_at)s) RETURNING users.id]
+[parameters: {'name': 'Test User 4', 'email': 'bhumikprajapati2608@gmail.com', 'password': '$2b$12$FQyGDUpx7SvKH9hKOIAIgOAG27JTpeOHiXEOoDKTX6XXZKYDS5Nya', 'role': 'USER', 'created_at': datetime.datetime(2026, 7, 1, 11, 5, 27, 772610)}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+2026-07-01 16:44:04,220 | WARNING | passlib.handlers.bcrypt | (trapped) error reading bcrypt version 
+Traceback (most recent call last):
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2026-07-01 16:44:05,020 | ERROR | exception_handler | Exception: POST http://127.0.0.1:8000/user/create (psycopg2.errors.StringDataRightTruncation) value too long for type character varying(20)
+
+[SQL: INSERT INTO users (name, email, password, role, created_at) VALUES (%(name)s, %(email)s, %(password)s, %(role)s, %(created_at)s) RETURNING users.id]
+[parameters: {'name': 'Test User 4', 'email': 'bhumikprajapati2608@gmail.com', 'password': '$2b$12$Pge2hj.A47TufBof1LcGx./WfM3QbCvKq.e9ws8hkTpdX.AJAukvK', 'role': 'USER', 'created_at': datetime.datetime(2026, 7, 1, 11, 13, 56, 706542)}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h) 
+Traceback (most recent call last):
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.StringDataRightTruncation: value too long for type character varying(20)
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Python Basic Internship\alembic\Mini Project 2\services\users\user_service.py", line 27, in create_user_service
+    msg = add_user(user,session)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\repo\users\user_repo.py", line 11, in add_user
+    session.commit()
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\sqlalchemy\orm\session.py", line 2035, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\sqlalchemy\orm\state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\sqlalchemy\orm\session.py", line 1316, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\sqlalchemy\orm\state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\sqlalchemy\orm\session.py", line 1290, in _prepare_impl
+    self.session.flush()
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\sqlalchemy\orm\session.py", line 4353, in flush
+    self._flush(objects)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\sqlalchemy\orm\session.py", line 4488, in _flush
+    with util.safe_reraise():
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\sqlalchemy\util\langhelpers.py", line 122, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\sqlalchemy\orm\session.py", line 4449, in _flush
+    flush_context.execute()
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 465, in execute
+    rec.execute(self)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 641, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\sqlalchemy\orm\persistence.py", line 94, in save_obj
+    _emit_insert_statements(
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\sqlalchemy\orm\persistence.py", line 1234, in _emit_insert_statements
+    result = connection.execute(
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1421, in execute
+    return meth(
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 526, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1643, in _execute_clauseelement
+    ret = self._execute_context(
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\sqlalchemy\engine\base.py", line 2365, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.DataError: (psycopg2.errors.StringDataRightTruncation) value too long for type character varying(20)
+
+[SQL: INSERT INTO users (name, email, password, role, created_at) VALUES (%(name)s, %(email)s, %(password)s, %(role)s, %(created_at)s) RETURNING users.id]
+[parameters: {'name': 'Test User 4', 'email': 'bhumikprajapati2608@gmail.com', 'password': '$2b$12$Pge2hj.A47TufBof1LcGx./WfM3QbCvKq.e9ws8hkTpdX.AJAukvK', 'role': 'USER', 'created_at': datetime.datetime(2026, 7, 1, 11, 13, 56, 706542)}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 15, in token_verify
+    return await call_next(request)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\fastapi\routing.py", line 2543, in app
+    await route.handle(scope, receive, send)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\fastapi\routing.py", line 1700, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\fastapi\routing.py", line 2598, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\fastapi\routing.py", line 1720, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\fastapi\routing.py", line 1239, in handle
+    await app(scope, receive, send)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\fastapi\routing.py", line 150, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\fastapi\routing.py", line 136, in app
+    response = await f(request)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\fastapi\routing.py", line 690, in app
+    raw_response = await run_endpoint_function(
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\fastapi\routing.py", line 346, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\starlette\concurrency.py", line 34, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\anyio\to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\anyio\_backends\_asyncio.py", line 2596, in run_sync_in_worker_thread
+    return await future
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\anyio\_backends\_asyncio.py", line 1029, in run
+    result = context.run(func, *args)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\api\users\user.py", line 43, in create_user
+    result = create_user_service(user,session)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\services\users\user_service.py", line 31, in create_user_service
+    raise Exception(str(e))
+Exception: (psycopg2.errors.StringDataRightTruncation) value too long for type character varying(20)
+
+[SQL: INSERT INTO users (name, email, password, role, created_at) VALUES (%(name)s, %(email)s, %(password)s, %(role)s, %(created_at)s) RETURNING users.id]
+[parameters: {'name': 'Test User 4', 'email': 'bhumikprajapati2608@gmail.com', 'password': '$2b$12$Pge2hj.A47TufBof1LcGx./WfM3QbCvKq.e9ws8hkTpdX.AJAukvK', 'role': 'USER', 'created_at': datetime.datetime(2026, 7, 1, 11, 13, 56, 706542)}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+2026-07-01 16:50:42,340 | WARNING | passlib.handlers.bcrypt | (trapped) error reading bcrypt version 
+Traceback (most recent call last):
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2026-07-01 16:50:43,042 | ERROR | exception_handler | Exception: POST http://127.0.0.1:8000/user/create (psycopg2.errors.StringDataRightTruncation) value too long for type character varying(20)
+
+[SQL: INSERT INTO users (name, email, password, role, created_at) VALUES (%(name)s, %(email)s, %(password)s, %(role)s, %(created_at)s) RETURNING users.id]
+[parameters: {'name': 'Test User 4', 'email': 'bhumikprajapati2608@gmail.com', 'password': '$2b$12$CNE6LDb3VW0XSfeE1e2I.OGD84wGSCbVWfHI.B167un5vpw.jreAq', 'role': 'USER', 'created_at': datetime.datetime(2026, 7, 1, 11, 20, 36, 637484)}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h) 
+Traceback (most recent call last):
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.StringDataRightTruncation: value too long for type character varying(20)
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Python Basic Internship\alembic\Mini Project 2\services\users\user_service.py", line 27, in create_user_service
+    msg = add_user(user,session)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\repo\users\user_repo.py", line 11, in add_user
+    session.commit()
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\sqlalchemy\orm\session.py", line 2035, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\sqlalchemy\orm\state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\sqlalchemy\orm\session.py", line 1316, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\sqlalchemy\orm\state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\sqlalchemy\orm\session.py", line 1290, in _prepare_impl
+    self.session.flush()
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\sqlalchemy\orm\session.py", line 4353, in flush
+    self._flush(objects)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\sqlalchemy\orm\session.py", line 4488, in _flush
+    with util.safe_reraise():
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\sqlalchemy\util\langhelpers.py", line 122, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\sqlalchemy\orm\session.py", line 4449, in _flush
+    flush_context.execute()
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 465, in execute
+    rec.execute(self)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 641, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\sqlalchemy\orm\persistence.py", line 94, in save_obj
+    _emit_insert_statements(
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\sqlalchemy\orm\persistence.py", line 1234, in _emit_insert_statements
+    result = connection.execute(
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1421, in execute
+    return meth(
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 526, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1643, in _execute_clauseelement
+    ret = self._execute_context(
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\sqlalchemy\engine\base.py", line 2365, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.DataError: (psycopg2.errors.StringDataRightTruncation) value too long for type character varying(20)
+
+[SQL: INSERT INTO users (name, email, password, role, created_at) VALUES (%(name)s, %(email)s, %(password)s, %(role)s, %(created_at)s) RETURNING users.id]
+[parameters: {'name': 'Test User 4', 'email': 'bhumikprajapati2608@gmail.com', 'password': '$2b$12$CNE6LDb3VW0XSfeE1e2I.OGD84wGSCbVWfHI.B167un5vpw.jreAq', 'role': 'USER', 'created_at': datetime.datetime(2026, 7, 1, 11, 20, 36, 637484)}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 15, in token_verify
+    return await call_next(request)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\fastapi\routing.py", line 2543, in app
+    await route.handle(scope, receive, send)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\fastapi\routing.py", line 1700, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\fastapi\routing.py", line 2598, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\fastapi\routing.py", line 1720, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\fastapi\routing.py", line 1239, in handle
+    await app(scope, receive, send)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\fastapi\routing.py", line 150, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\fastapi\routing.py", line 136, in app
+    response = await f(request)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\fastapi\routing.py", line 690, in app
+    raw_response = await run_endpoint_function(
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\fastapi\routing.py", line 346, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\starlette\concurrency.py", line 34, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\anyio\to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\anyio\_backends\_asyncio.py", line 2596, in run_sync_in_worker_thread
+    return await future
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\anyio\_backends\_asyncio.py", line 1029, in run
+    result = context.run(func, *args)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\api\users\user.py", line 43, in create_user
+    result = create_user_service(user,session)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\services\users\user_service.py", line 31, in create_user_service
+    raise Exception(str(e))
+Exception: (psycopg2.errors.StringDataRightTruncation) value too long for type character varying(20)
+
+[SQL: INSERT INTO users (name, email, password, role, created_at) VALUES (%(name)s, %(email)s, %(password)s, %(role)s, %(created_at)s) RETURNING users.id]
+[parameters: {'name': 'Test User 4', 'email': 'bhumikprajapati2608@gmail.com', 'password': '$2b$12$CNE6LDb3VW0XSfeE1e2I.OGD84wGSCbVWfHI.B167un5vpw.jreAq', 'role': 'USER', 'created_at': datetime.datetime(2026, 7, 1, 11, 20, 36, 637484)}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+2026-07-01 16:52:55,305 | WARNING | passlib.handlers.bcrypt | (trapped) error reading bcrypt version 
+Traceback (most recent call last):
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+AttributeError: module 'bcrypt' has no attribute '__about__'
