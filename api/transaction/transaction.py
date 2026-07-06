@@ -1,4 +1,5 @@
 from fastapi import APIRouter, Depends, HTTPException, Query
+from core.celery import send_transaction_email
 from services.transaction.transaction_service import deposit_service, withdraw_service, transfer_service, get_transactions_service
 from schemas.database_model import get_session
 from fastapi import Request
@@ -15,10 +16,13 @@ def deposit(
             session=Depends(get_session)):
     data = request.state.current_user
     email = data.get('email')
+    # email = "bhumikprajapati2608@gmail.com"
     balance = deposit_service(email,amount,description,session)
     if balance:
+        task = send_transaction_email.delay(email,"credited",amount)
         return {
-            'response': balance
+            'response': balance,
+            'task_id': task.id
         }
     raise HTTPException(status_code=404,detail='account not found.')
     
@@ -32,8 +36,10 @@ def withdraw(
             session=Depends(get_session)):
     data = request.state.current_user
     email = data.get('email')
+    # email = "bhumikprajapati2608@gmail.com"
     balance = withdraw_service(email,amount,description,session)
     if balance:
+        task = send_transaction_email.delay(email,"debited",amount)
         return {
             'response': balance
         }
@@ -50,9 +56,11 @@ def transfer(
         session=Depends(get_session)):
     data = request.state.current_user
     email = data.get('email')
+    # email = "bhumikprajapati2608@gmail.com"
     msg = transfer_service(email,to_account,amount,description,session)
     print(msg)
     if msg == "transaction completed.":
+        task = send_transaction_email.delay(email,"debited",amount)
         return {
             'message':msg
         }

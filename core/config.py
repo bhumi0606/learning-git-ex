@@ -8,6 +8,7 @@ class Setting(BaseSettings):
     ALGORITHM: str
     BROKER: str
     EMAIL_PASS: str
+    SENDER_EMAIL: str
 
     model_config = {
         'env_file': '.env'
@@ -22,3 +23,4 @@ SECRET_KEY = setting.SECRET_KEY
 ALGORITHM = setting.ALGORITHM
 BROKER = setting.BROKER
 EMAIL_PASS = setting.EMAIL_PASS
+SENDER_EMAIL = setting.SENDER_EMAIL

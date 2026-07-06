@@ -16409,3 +16409,1306 @@ Traceback (most recent call last):
   File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
     version = _bcrypt.__about__.__version__
 AttributeError: module 'bcrypt' has no attribute '__about__'
+2026-07-01 18:31:49,493 | ERROR | exception_handler | Exception: GET http://127.0.0.1:8000/transaction/deposit?amount=100 module 'jwt' has no attribute 'decode' 
+Traceback (most recent call last):
+  File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 19, in token_verify
+    data = jwt.decode(
+AttributeError: module 'jwt' has no attribute 'decode'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 29, in token_verify
+    raise Exception(str(e))
+Exception: module 'jwt' has no attribute 'decode'
+2026-07-01 18:33:49,664 | ERROR | exception_handler | Exception: GET http://127.0.0.1:8000/transaction/deposit?amount=100 Invalid token type. Token must be a <class 'bytes'> 
+Traceback (most recent call last):
+  File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 19, in token_verify
+    data = jwt.decode(
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\jwt\api_jwt.py", line 368, in decode
+    decoded = self.decode_complete(
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\jwt\api_jwt.py", line 265, in decode_complete
+    decoded = self._jws.decode_complete(
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\jwt\api_jws.py", line 249, in decode_complete
+    payload, signing_input, header, signature = self._load(jwt)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\jwt\api_jws.py", line 323, in _load
+    raise DecodeError(f"Invalid token type. Token must be a {bytes}")
+jwt.exceptions.DecodeError: Invalid token type. Token must be a <class 'bytes'>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 29, in token_verify
+    raise Exception(str(e))
+Exception: Invalid token type. Token must be a <class 'bytes'>
+2026-07-01 18:38:18,229 | ERROR | exception_handler | Exception: GET http://127.0.0.1:8000/transaction/deposit?amount=200 Invalid token type. Token must be a <class 'bytes'> 
+Traceback (most recent call last):
+  File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 21, in token_verify
+    data = jwt.decode(
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\jwt\api_jwt.py", line 368, in decode
+    decoded = self.decode_complete(
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\jwt\api_jwt.py", line 265, in decode_complete
+    decoded = self._jws.decode_complete(
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\jwt\api_jws.py", line 249, in decode_complete
+    payload, signing_input, header, signature = self._load(jwt)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\jwt\api_jws.py", line 323, in _load
+    raise DecodeError(f"Invalid token type. Token must be a {bytes}")
+jwt.exceptions.DecodeError: Invalid token type. Token must be a <class 'bytes'>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 31, in token_verify
+    raise Exception(str(e))
+Exception: Invalid token type. Token must be a <class 'bytes'>
+2026-07-01 19:02:17,737 | WARNING | passlib.handlers.bcrypt | (trapped) error reading bcrypt version 
+Traceback (most recent call last):
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2026-07-05 18:46:22,232 | ERROR | exception_handler | Exception: GET http://127.0.0.1:8000/ Invalid token type. Token must be a <class 'bytes'> 
+  + Exception Group Traceback (most recent call last):
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 81, in collapse_excgroups
+  |     yield
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 192, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\_backends\_asyncio.py", line 799, in __aexit__
+  |     raise BaseExceptionGroup(
+  | exceptiongroup.ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    |     await self.app(scope, receive, _send)
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    |     with recv_stream, send_stream, collapse_excgroups():
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    |     self.gen.throw(typ, value, traceback)
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    |     raise exc
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |   File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 30, in token_verify
+    |     raise Exception(str(e))
+    | Exception: Invalid token type. Token must be a <class 'bytes'>
+    +------------------------------------
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 30, in token_verify
+    raise Exception(str(e))
+Exception: Invalid token type. Token must be a <class 'bytes'>
+2026-07-05 18:46:22,832 | ERROR | exception_handler | Exception: GET http://127.0.0.1:8000/favicon.ico Invalid token type. Token must be a <class 'bytes'> 
+  + Exception Group Traceback (most recent call last):
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 81, in collapse_excgroups
+  |     yield
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 192, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\_backends\_asyncio.py", line 799, in __aexit__
+  |     raise BaseExceptionGroup(
+  | exceptiongroup.ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    |     await self.app(scope, receive, _send)
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    |     with recv_stream, send_stream, collapse_excgroups():
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    |     self.gen.throw(typ, value, traceback)
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    |     raise exc
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |   File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 30, in token_verify
+    |     raise Exception(str(e))
+    | Exception: Invalid token type. Token must be a <class 'bytes'>
+    +------------------------------------
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 30, in token_verify
+    raise Exception(str(e))
+Exception: Invalid token type. Token must be a <class 'bytes'>
+2026-07-05 19:07:16,154 | ERROR | exception_handler | Exception: POST http://127.0.0.1:8000/user/create (psycopg2.errors.UniqueViolation) duplicate key value violates unique constraint "users_email_key"
+DETAIL:  Key (email)=(testing1@gmail.com) already exists.
+
+[SQL: INSERT INTO users (name, email, password, role, created_at) VALUES (%(name)s, %(email)s, %(password)s, %(role)s, %(created_at)s) RETURNING users.id]
+[parameters: {'name': 'testing1', 'email': 'testing1@gmail.com', 'password': '$2b$12$LrksnOgyQBMOr3wGAA68KOOeysx7rRtalQJSQCFFdg5dniCpxKgc6', 'role': 'USER', 'created_at': datetime.datetime(2026, 7, 5, 13, 35, 40, 568535)}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj) 
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "users_email_key"
+DETAIL:  Key (email)=(testing1@gmail.com) already exists.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Python Basic Internship\alembic\Mini Project 2\services\users\user_service.py", line 27, in create_user_service
+    msg = add_user(user,session)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\repo\users\user_repo.py", line 11, in add_user
+    session.commit()
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\session.py", line 2034, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\session.py", line 1315, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\session.py", line 1290, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\session.py", line 4352, in flush
+    self._flush(objects)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\session.py", line 4487, in _flush
+    with util.safe_reraise():
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\util\langhelpers.py", line 122, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\session.py", line 4448, in _flush
+    flush_context.execute()
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 465, in execute
+    rec.execute(self)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 641, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\persistence.py", line 94, in save_obj
+    _emit_insert_statements(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\orm\persistence.py", line 1234, in _emit_insert_statements
+    result = connection.execute(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 1421, in execute
+    return meth(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\sql\elements.py", line 526, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 1643, in _execute_clauseelement
+    ret = self._execute_context(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 2365, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.IntegrityError: (psycopg2.errors.UniqueViolation) duplicate key value violates unique constraint "users_email_key"
+DETAIL:  Key (email)=(testing1@gmail.com) already exists.
+
+[SQL: INSERT INTO users (name, email, password, role, created_at) VALUES (%(name)s, %(email)s, %(password)s, %(role)s, %(created_at)s) RETURNING users.id]
+[parameters: {'name': 'testing1', 'email': 'testing1@gmail.com', 'password': '$2b$12$LrksnOgyQBMOr3wGAA68KOOeysx7rRtalQJSQCFFdg5dniCpxKgc6', 'role': 'USER', 'created_at': datetime.datetime(2026, 7, 5, 13, 35, 40, 568535)}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 16, in token_verify
+    return await call_next(request)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\routing.py", line 680, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 134, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 120, in app
+    response = await f(request)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 674, in app
+    raw_response = await run_endpoint_function(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\fastapi\routing.py", line 330, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\concurrency.py", line 32, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\_backends\_asyncio.py", line 2518, in run_sync_in_worker_thread
+    return await future
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\_backends\_asyncio.py", line 1002, in run
+    result = context.run(func, *args)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\api\users\user.py", line 43, in create_user
+    result = create_user_service(user,session)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\services\users\user_service.py", line 31, in create_user_service
+    raise Exception(str(e))
+Exception: (psycopg2.errors.UniqueViolation) duplicate key value violates unique constraint "users_email_key"
+DETAIL:  Key (email)=(testing1@gmail.com) already exists.
+
+[SQL: INSERT INTO users (name, email, password, role, created_at) VALUES (%(name)s, %(email)s, %(password)s, %(role)s, %(created_at)s) RETURNING users.id]
+[parameters: {'name': 'testing1', 'email': 'testing1@gmail.com', 'password': '$2b$12$LrksnOgyQBMOr3wGAA68KOOeysx7rRtalQJSQCFFdg5dniCpxKgc6', 'role': 'USER', 'created_at': datetime.datetime(2026, 7, 5, 13, 35, 40, 568535)}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2026-07-05 19:14:06,394 | ERROR | exception_handler | Exception: POST http://127.0.0.1:8000/account/create Invalid token type. Token must be a <class 'bytes'> 
+  + Exception Group Traceback (most recent call last):
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 81, in collapse_excgroups
+  |     yield
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 192, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\_backends\_asyncio.py", line 799, in __aexit__
+  |     raise BaseExceptionGroup(
+  | exceptiongroup.ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    |     await self.app(scope, receive, _send)
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    |     with recv_stream, send_stream, collapse_excgroups():
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    |     self.gen.throw(typ, value, traceback)
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    |     raise exc
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |   File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 30, in token_verify
+    |     raise Exception(str(e))
+    | Exception: Invalid token type. Token must be a <class 'bytes'>
+    +------------------------------------
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 30, in token_verify
+    raise Exception(str(e))
+Exception: Invalid token type. Token must be a <class 'bytes'>
+2026-07-05 19:16:15,723 | ERROR | exception_handler | Exception: POST http://127.0.0.1:8000/account/create Invalid token type. Token must be a <class 'bytes'> 
+  + Exception Group Traceback (most recent call last):
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 81, in collapse_excgroups
+  |     yield
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 192, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\_backends\_asyncio.py", line 799, in __aexit__
+  |     raise BaseExceptionGroup(
+  | exceptiongroup.ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    |     await self.app(scope, receive, _send)
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    |     with recv_stream, send_stream, collapse_excgroups():
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    |     self.gen.throw(typ, value, traceback)
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    |     raise exc
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |   File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 31, in token_verify
+    |     raise Exception(str(e))
+    | Exception: Invalid token type. Token must be a <class 'bytes'>
+    +------------------------------------
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 31, in token_verify
+    raise Exception(str(e))
+Exception: Invalid token type. Token must be a <class 'bytes'>
+2026-07-05 19:17:30,835 | ERROR | exception_handler | Exception: GET http://127.0.0.1:8000/docs Invalid token type. Token must be a <class 'bytes'> 
+  + Exception Group Traceback (most recent call last):
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 81, in collapse_excgroups
+  |     yield
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 192, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\_backends\_asyncio.py", line 799, in __aexit__
+  |     raise BaseExceptionGroup(
+  | exceptiongroup.ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    |     await self.app(scope, receive, _send)
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    |     with recv_stream, send_stream, collapse_excgroups():
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    |     self.gen.throw(typ, value, traceback)
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    |     raise exc
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |   File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 31, in token_verify
+    |     raise Exception(str(e))
+    | Exception: Invalid token type. Token must be a <class 'bytes'>
+    +------------------------------------
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 31, in token_verify
+    raise Exception(str(e))
+Exception: Invalid token type. Token must be a <class 'bytes'>
+2026-07-05 19:17:30,919 | ERROR | exception_handler | Exception: GET http://127.0.0.1:8000/favicon.ico Invalid token type. Token must be a <class 'bytes'> 
+  + Exception Group Traceback (most recent call last):
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 81, in collapse_excgroups
+  |     yield
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 192, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\_backends\_asyncio.py", line 799, in __aexit__
+  |     raise BaseExceptionGroup(
+  | exceptiongroup.ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    |     await self.app(scope, receive, _send)
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    |     with recv_stream, send_stream, collapse_excgroups():
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    |     self.gen.throw(typ, value, traceback)
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    |     raise exc
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |   File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 31, in token_verify
+    |     raise Exception(str(e))
+    | Exception: Invalid token type. Token must be a <class 'bytes'>
+    +------------------------------------
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 31, in token_verify
+    raise Exception(str(e))
+Exception: Invalid token type. Token must be a <class 'bytes'>
+2026-07-05 19:17:32,990 | ERROR | exception_handler | Exception: GET http://127.0.0.1:8000/docs Invalid token type. Token must be a <class 'bytes'> 
+  + Exception Group Traceback (most recent call last):
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 81, in collapse_excgroups
+  |     yield
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 192, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\_backends\_asyncio.py", line 799, in __aexit__
+  |     raise BaseExceptionGroup(
+  | exceptiongroup.ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    |     await self.app(scope, receive, _send)
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    |     with recv_stream, send_stream, collapse_excgroups():
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    |     self.gen.throw(typ, value, traceback)
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    |     raise exc
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |   File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 31, in token_verify
+    |     raise Exception(str(e))
+    | Exception: Invalid token type. Token must be a <class 'bytes'>
+    +------------------------------------
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 31, in token_verify
+    raise Exception(str(e))
+Exception: Invalid token type. Token must be a <class 'bytes'>
+2026-07-05 19:17:33,057 | ERROR | exception_handler | Exception: GET http://127.0.0.1:8000/favicon.ico Invalid token type. Token must be a <class 'bytes'> 
+  + Exception Group Traceback (most recent call last):
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 81, in collapse_excgroups
+  |     yield
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 192, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\_backends\_asyncio.py", line 799, in __aexit__
+  |     raise BaseExceptionGroup(
+  | exceptiongroup.ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    |     await self.app(scope, receive, _send)
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    |     with recv_stream, send_stream, collapse_excgroups():
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    |     self.gen.throw(typ, value, traceback)
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    |     raise exc
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |   File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 31, in token_verify
+    |     raise Exception(str(e))
+    | Exception: Invalid token type. Token must be a <class 'bytes'>
+    +------------------------------------
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 31, in token_verify
+    raise Exception(str(e))
+Exception: Invalid token type. Token must be a <class 'bytes'>
+2026-07-05 19:17:34,481 | ERROR | exception_handler | Exception: GET http://127.0.0.1:8000/favicon.ico Invalid token type. Token must be a <class 'bytes'> 
+  + Exception Group Traceback (most recent call last):
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 81, in collapse_excgroups
+  |     yield
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 192, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\_backends\_asyncio.py", line 799, in __aexit__
+  |     raise BaseExceptionGroup(
+  | exceptiongroup.ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    |     await self.app(scope, receive, _send)
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    |     with recv_stream, send_stream, collapse_excgroups():
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    |     self.gen.throw(typ, value, traceback)
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    |     raise exc
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |   File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 31, in token_verify
+    |     raise Exception(str(e))
+    | Exception: Invalid token type. Token must be a <class 'bytes'>
+    +------------------------------------
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 31, in token_verify
+    raise Exception(str(e))
+Exception: Invalid token type. Token must be a <class 'bytes'>
+2026-07-05 19:17:37,559 | ERROR | exception_handler | Exception: GET http://127.0.0.1:8000/docs Invalid token type. Token must be a <class 'bytes'> 
+  + Exception Group Traceback (most recent call last):
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 81, in collapse_excgroups
+  |     yield
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 192, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\_backends\_asyncio.py", line 799, in __aexit__
+  |     raise BaseExceptionGroup(
+  | exceptiongroup.ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    |     await self.app(scope, receive, _send)
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    |     with recv_stream, send_stream, collapse_excgroups():
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    |     self.gen.throw(typ, value, traceback)
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    |     raise exc
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |   File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 31, in token_verify
+    |     raise Exception(str(e))
+    | Exception: Invalid token type. Token must be a <class 'bytes'>
+    +------------------------------------
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 31, in token_verify
+    raise Exception(str(e))
+Exception: Invalid token type. Token must be a <class 'bytes'>
+2026-07-05 19:17:37,621 | ERROR | exception_handler | Exception: GET http://127.0.0.1:8000/favicon.ico Invalid token type. Token must be a <class 'bytes'> 
+  + Exception Group Traceback (most recent call last):
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 81, in collapse_excgroups
+  |     yield
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 192, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\_backends\_asyncio.py", line 799, in __aexit__
+  |     raise BaseExceptionGroup(
+  | exceptiongroup.ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    |     await self.app(scope, receive, _send)
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    |     with recv_stream, send_stream, collapse_excgroups():
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    |     self.gen.throw(typ, value, traceback)
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    |     raise exc
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |   File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 31, in token_verify
+    |     raise Exception(str(e))
+    | Exception: Invalid token type. Token must be a <class 'bytes'>
+    +------------------------------------
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 31, in token_verify
+    raise Exception(str(e))
+Exception: Invalid token type. Token must be a <class 'bytes'>
+2026-07-05 19:17:37,720 | ERROR | exception_handler | Exception: GET http://127.0.0.1:8000/docs Invalid token type. Token must be a <class 'bytes'> 
+  + Exception Group Traceback (most recent call last):
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 81, in collapse_excgroups
+  |     yield
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 192, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\_backends\_asyncio.py", line 799, in __aexit__
+  |     raise BaseExceptionGroup(
+  | exceptiongroup.ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    |     await self.app(scope, receive, _send)
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    |     with recv_stream, send_stream, collapse_excgroups():
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    |     self.gen.throw(typ, value, traceback)
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    |     raise exc
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |   File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 31, in token_verify
+    |     raise Exception(str(e))
+    | Exception: Invalid token type. Token must be a <class 'bytes'>
+    +------------------------------------
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 31, in token_verify
+    raise Exception(str(e))
+Exception: Invalid token type. Token must be a <class 'bytes'>
+2026-07-05 19:17:37,783 | ERROR | exception_handler | Exception: GET http://127.0.0.1:8000/favicon.ico Invalid token type. Token must be a <class 'bytes'> 
+  + Exception Group Traceback (most recent call last):
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 81, in collapse_excgroups
+  |     yield
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 192, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\_backends\_asyncio.py", line 799, in __aexit__
+  |     raise BaseExceptionGroup(
+  | exceptiongroup.ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    |     await self.app(scope, receive, _send)
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    |     with recv_stream, send_stream, collapse_excgroups():
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    |     self.gen.throw(typ, value, traceback)
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    |     raise exc
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |   File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 31, in token_verify
+    |     raise Exception(str(e))
+    | Exception: Invalid token type. Token must be a <class 'bytes'>
+    +------------------------------------
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 31, in token_verify
+    raise Exception(str(e))
+Exception: Invalid token type. Token must be a <class 'bytes'>
+2026-07-05 19:17:37,852 | ERROR | exception_handler | Exception: GET http://127.0.0.1:8000/docs Invalid token type. Token must be a <class 'bytes'> 
+  + Exception Group Traceback (most recent call last):
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 81, in collapse_excgroups
+  |     yield
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 192, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\_backends\_asyncio.py", line 799, in __aexit__
+  |     raise BaseExceptionGroup(
+  | exceptiongroup.ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    |     await self.app(scope, receive, _send)
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    |     with recv_stream, send_stream, collapse_excgroups():
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    |     self.gen.throw(typ, value, traceback)
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    |     raise exc
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |   File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 31, in token_verify
+    |     raise Exception(str(e))
+    | Exception: Invalid token type. Token must be a <class 'bytes'>
+    +------------------------------------
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 31, in token_verify
+    raise Exception(str(e))
+Exception: Invalid token type. Token must be a <class 'bytes'>
+2026-07-05 19:17:37,909 | ERROR | exception_handler | Exception: GET http://127.0.0.1:8000/favicon.ico Invalid token type. Token must be a <class 'bytes'> 
+  + Exception Group Traceback (most recent call last):
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 81, in collapse_excgroups
+  |     yield
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 192, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\_backends\_asyncio.py", line 799, in __aexit__
+  |     raise BaseExceptionGroup(
+  | exceptiongroup.ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    |     await self.app(scope, receive, _send)
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    |     with recv_stream, send_stream, collapse_excgroups():
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    |     self.gen.throw(typ, value, traceback)
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    |     raise exc
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |   File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 31, in token_verify
+    |     raise Exception(str(e))
+    | Exception: Invalid token type. Token must be a <class 'bytes'>
+    +------------------------------------
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 31, in token_verify
+    raise Exception(str(e))
+Exception: Invalid token type. Token must be a <class 'bytes'>
+2026-07-05 19:17:38,021 | ERROR | exception_handler | Exception: GET http://127.0.0.1:8000/docs Invalid token type. Token must be a <class 'bytes'> 
+  + Exception Group Traceback (most recent call last):
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 81, in collapse_excgroups
+  |     yield
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 192, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\_backends\_asyncio.py", line 799, in __aexit__
+  |     raise BaseExceptionGroup(
+  | exceptiongroup.ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    |     await self.app(scope, receive, _send)
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    |     with recv_stream, send_stream, collapse_excgroups():
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    |     self.gen.throw(typ, value, traceback)
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    |     raise exc
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |   File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 31, in token_verify
+    |     raise Exception(str(e))
+    | Exception: Invalid token type. Token must be a <class 'bytes'>
+    +------------------------------------
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 31, in token_verify
+    raise Exception(str(e))
+Exception: Invalid token type. Token must be a <class 'bytes'>
+2026-07-05 19:17:38,081 | ERROR | exception_handler | Exception: GET http://127.0.0.1:8000/favicon.ico Invalid token type. Token must be a <class 'bytes'> 
+  + Exception Group Traceback (most recent call last):
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 81, in collapse_excgroups
+  |     yield
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 192, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\_backends\_asyncio.py", line 799, in __aexit__
+  |     raise BaseExceptionGroup(
+  | exceptiongroup.ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    |     await self.app(scope, receive, _send)
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    |     with recv_stream, send_stream, collapse_excgroups():
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    |     self.gen.throw(typ, value, traceback)
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    |     raise exc
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |   File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 31, in token_verify
+    |     raise Exception(str(e))
+    | Exception: Invalid token type. Token must be a <class 'bytes'>
+    +------------------------------------
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 31, in token_verify
+    raise Exception(str(e))
+Exception: Invalid token type. Token must be a <class 'bytes'>
+2026-07-05 19:17:38,166 | ERROR | exception_handler | Exception: GET http://127.0.0.1:8000/docs Invalid token type. Token must be a <class 'bytes'> 
+  + Exception Group Traceback (most recent call last):
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 81, in collapse_excgroups
+  |     yield
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 192, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\_backends\_asyncio.py", line 799, in __aexit__
+  |     raise BaseExceptionGroup(
+  | exceptiongroup.ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    |     await self.app(scope, receive, _send)
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    |     with recv_stream, send_stream, collapse_excgroups():
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    |     self.gen.throw(typ, value, traceback)
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    |     raise exc
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |   File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 31, in token_verify
+    |     raise Exception(str(e))
+    | Exception: Invalid token type. Token must be a <class 'bytes'>
+    +------------------------------------
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 31, in token_verify
+    raise Exception(str(e))
+Exception: Invalid token type. Token must be a <class 'bytes'>
+2026-07-05 19:17:38,227 | ERROR | exception_handler | Exception: GET http://127.0.0.1:8000/favicon.ico Invalid token type. Token must be a <class 'bytes'> 
+  + Exception Group Traceback (most recent call last):
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 81, in collapse_excgroups
+  |     yield
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 192, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\_backends\_asyncio.py", line 799, in __aexit__
+  |     raise BaseExceptionGroup(
+  | exceptiongroup.ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    |     await self.app(scope, receive, _send)
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    |     with recv_stream, send_stream, collapse_excgroups():
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    |     self.gen.throw(typ, value, traceback)
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    |     raise exc
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |   File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 31, in token_verify
+    |     raise Exception(str(e))
+    | Exception: Invalid token type. Token must be a <class 'bytes'>
+    +------------------------------------
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 31, in token_verify
+    raise Exception(str(e))
+Exception: Invalid token type. Token must be a <class 'bytes'>
+2026-07-05 19:17:38,270 | ERROR | exception_handler | Exception: GET http://127.0.0.1:8000/docs Invalid token type. Token must be a <class 'bytes'> 
+  + Exception Group Traceback (most recent call last):
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 81, in collapse_excgroups
+  |     yield
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 192, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\_backends\_asyncio.py", line 799, in __aexit__
+  |     raise BaseExceptionGroup(
+  | exceptiongroup.ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    |     await self.app(scope, receive, _send)
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    |     with recv_stream, send_stream, collapse_excgroups():
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    |     self.gen.throw(typ, value, traceback)
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    |     raise exc
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |   File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 31, in token_verify
+    |     raise Exception(str(e))
+    | Exception: Invalid token type. Token must be a <class 'bytes'>
+    +------------------------------------
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 31, in token_verify
+    raise Exception(str(e))
+Exception: Invalid token type. Token must be a <class 'bytes'>
+2026-07-05 19:17:38,332 | ERROR | exception_handler | Exception: GET http://127.0.0.1:8000/favicon.ico Invalid token type. Token must be a <class 'bytes'> 
+  + Exception Group Traceback (most recent call last):
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 81, in collapse_excgroups
+  |     yield
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 192, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\_backends\_asyncio.py", line 799, in __aexit__
+  |     raise BaseExceptionGroup(
+  | exceptiongroup.ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    |     await self.app(scope, receive, _send)
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    |     with recv_stream, send_stream, collapse_excgroups():
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    |     self.gen.throw(typ, value, traceback)
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    |     raise exc
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |   File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 31, in token_verify
+    |     raise Exception(str(e))
+    | Exception: Invalid token type. Token must be a <class 'bytes'>
+    +------------------------------------
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 31, in token_verify
+    raise Exception(str(e))
+Exception: Invalid token type. Token must be a <class 'bytes'>
+2026-07-05 19:17:38,372 | ERROR | exception_handler | Exception: GET http://127.0.0.1:8000/docs Invalid token type. Token must be a <class 'bytes'> 
+  + Exception Group Traceback (most recent call last):
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 81, in collapse_excgroups
+  |     yield
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 192, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\_backends\_asyncio.py", line 799, in __aexit__
+  |     raise BaseExceptionGroup(
+  | exceptiongroup.ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    |     await self.app(scope, receive, _send)
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    |     with recv_stream, send_stream, collapse_excgroups():
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    |     self.gen.throw(typ, value, traceback)
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    |     raise exc
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |   File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 31, in token_verify
+    |     raise Exception(str(e))
+    | Exception: Invalid token type. Token must be a <class 'bytes'>
+    +------------------------------------
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 31, in token_verify
+    raise Exception(str(e))
+Exception: Invalid token type. Token must be a <class 'bytes'>
+2026-07-05 19:17:38,432 | ERROR | exception_handler | Exception: GET http://127.0.0.1:8000/favicon.ico Invalid token type. Token must be a <class 'bytes'> 
+  + Exception Group Traceback (most recent call last):
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 81, in collapse_excgroups
+  |     yield
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 192, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\_backends\_asyncio.py", line 799, in __aexit__
+  |     raise BaseExceptionGroup(
+  | exceptiongroup.ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    |     await self.app(scope, receive, _send)
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    |     with recv_stream, send_stream, collapse_excgroups():
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    |     self.gen.throw(typ, value, traceback)
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    |     raise exc
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |   File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 31, in token_verify
+    |     raise Exception(str(e))
+    | Exception: Invalid token type. Token must be a <class 'bytes'>
+    +------------------------------------
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 31, in token_verify
+    raise Exception(str(e))
+Exception: Invalid token type. Token must be a <class 'bytes'>
+2026-07-05 19:17:45,043 | ERROR | exception_handler | Exception: GET http://127.0.0.1:8000/docs Invalid token type. Token must be a <class 'bytes'> 
+  + Exception Group Traceback (most recent call last):
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 81, in collapse_excgroups
+  |     yield
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 192, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\_backends\_asyncio.py", line 799, in __aexit__
+  |     raise BaseExceptionGroup(
+  | exceptiongroup.ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    |     await self.app(scope, receive, _send)
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    |     with recv_stream, send_stream, collapse_excgroups():
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    |     self.gen.throw(typ, value, traceback)
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    |     raise exc
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |   File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 31, in token_verify
+    |     raise Exception(str(e))
+    | Exception: Invalid token type. Token must be a <class 'bytes'>
+    +------------------------------------
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 31, in token_verify
+    raise Exception(str(e))
+Exception: Invalid token type. Token must be a <class 'bytes'>
+2026-07-05 19:17:45,130 | ERROR | exception_handler | Exception: GET http://127.0.0.1:8000/favicon.ico Invalid token type. Token must be a <class 'bytes'> 
+  + Exception Group Traceback (most recent call last):
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 81, in collapse_excgroups
+  |     yield
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 192, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\anyio\_backends\_asyncio.py", line 799, in __aexit__
+  |     raise BaseExceptionGroup(
+  | exceptiongroup.ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    |     await self.app(scope, receive, _send)
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    |     with recv_stream, send_stream, collapse_excgroups():
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    |     self.gen.throw(typ, value, traceback)
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    |     raise exc
+    |   File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |   File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 31, in token_verify
+    |     raise Exception(str(e))
+    | Exception: Invalid token type. Token must be a <class 'bytes'>
+    +------------------------------------
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    raise exc
+  File "C:\Users\Admin\AppData\Local\Python\pythoncore-3.10-64\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 31, in token_verify
+    raise Exception(str(e))
+Exception: Invalid token type. Token must be a <class 'bytes'>
+2026-07-06 11:43:51,045 | ERROR | exception_handler | Exception: POST http://127.0.0.1:8000/transaction/withdraw?amount=500 Invalid token type. Token must be a <class 'bytes'> 
+Traceback (most recent call last):
+  File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 21, in token_verify
+    data = jwt.decode(
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\jwt\api_jwt.py", line 368, in decode
+    decoded = self.decode_complete(
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\jwt\api_jwt.py", line 265, in decode_complete
+    decoded = self._jws.decode_complete(
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\jwt\api_jws.py", line 249, in decode_complete
+    payload, signing_input, header, signature = self._load(jwt)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\jwt\api_jws.py", line 323, in _load
+    raise DecodeError(f"Invalid token type. Token must be a {bytes}")
+jwt.exceptions.DecodeError: Invalid token type. Token must be a <class 'bytes'>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 31, in token_verify
+    raise Exception(str(e))
+Exception: Invalid token type. Token must be a <class 'bytes'>
+2026-07-06 11:47:56,288 | ERROR | exception_handler | Exception: POST http://127.0.0.1:8000/transaction/transfer?to_account=ACC20260002&amount=200 Invalid token type. Token must be a <class 'bytes'> 
+Traceback (most recent call last):
+  File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 19, in token_verify
+    data = jwt.decode(
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\jwt\api_jwt.py", line 368, in decode
+    decoded = self.decode_complete(
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\jwt\api_jwt.py", line 265, in decode_complete
+    decoded = self._jws.decode_complete(
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\jwt\api_jws.py", line 249, in decode_complete
+    payload, signing_input, header, signature = self._load(jwt)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\jwt\api_jws.py", line 323, in _load
+    raise DecodeError(f"Invalid token type. Token must be a {bytes}")
+jwt.exceptions.DecodeError: Invalid token type. Token must be a <class 'bytes'>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\venv\lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "D:\Python Basic Internship\alembic\Mini Project 2\middleware\token_verify.py", line 29, in token_verify
+    raise Exception(str(e))
+Exception: Invalid token type. Token must be a <class 'bytes'>

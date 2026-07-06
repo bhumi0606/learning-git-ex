@@ -10,7 +10,6 @@ account_route = APIRouter()
 
 @account_route.post('/account/create',status_code=201)
 def create_account(request:Request,account:CreateAccount,user=Depends(admin_require),session=Depends(get_session)):
-    data = request.state.current_user
     return create_account_service(account,session)
 
     
