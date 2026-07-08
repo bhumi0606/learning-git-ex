@@ -1,17 +1,8 @@
-from celery import Celery
-import smtplib,ssl
+from core.celery import celery_app
+from core.config import EMAIL_PASS, SENDER_EMAIL
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
-
-from core.config import BROKER, EMAIL_PASS, SENDER_EMAIL
-
-# print(EMAIL_PASS)
-# print(SENDER_EMAIL)
-
-celery_app = Celery(
-    "tasks",
-    broker=BROKER
-)
+import smtplib,ssl
 
 def func_send_email(receiver_email,html_text,message):
     smtp_server = "smtp.gmail.com"
@@ -33,7 +24,7 @@ def func_registration_email(receiver_email):
     html = """
         <html>
             <body>
-            <p><b>Registration successfull</b></p>
+            <p><b>Registration successful</b></p>
             </body>
         </html>
     """
@@ -50,7 +41,7 @@ def func_transaction_email(receiver_email,type,amount):
     html = f"""
         <html>
             <body>
-            <p><b>Transaction succesfull</b></p>
+            <p><b>Transaction successful</b></p>
             <p>{amount} {type} from your account<b>
             </body>
         </html>
@@ -74,3 +65,12 @@ def send_registration_email(email_id):
 def send_transaction_email(email_id,type,amount):
     receiver_email = email_id
     return func_transaction_email(receiver_email,type,amount)
+
+
+@celery_app.task
+def hello():
+    return "Hello"
+
+@celery_app.task
+def daily_transaction_report():
+    return "daily transaction report"
