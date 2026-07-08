@@ -8,7 +8,8 @@ from core.config import BROKER
 
 celery_app = Celery(
     "tasks",
-    broker=BROKER
+    broker=BROKER,
+    include=["tasks"]
 )
 
 celery_app.conf.beat_schedule = {

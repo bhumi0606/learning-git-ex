@@ -33,7 +33,7 @@ def func_registration_email(receiver_email):
 
     message = MIMEMultipart("alternative")
     message['Subject'] = "Registration successful"
-    message['From'] = sender_email
+    message['From'] = SENDER_EMAIL
     message['To'] = receiver_email
     return func_send_email(receiver_email,html_text,message)
 
@@ -51,7 +51,7 @@ def func_transaction_email(receiver_email,type,amount):
 
     message = MIMEMultipart("alternative")
     message['Subject'] = "Transaction successful"
-    message['From'] = sender_email
+    message['From'] = SENDER_EMAIL
     message['To'] = receiver_email
     return func_send_email(receiver_email,html_text,message)
 
