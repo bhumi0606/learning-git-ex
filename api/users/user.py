@@ -10,7 +10,7 @@ from decorators.logging_decorator import logging_decorator
 from typing import Optional
 from schemas.users.users_responseModel import UserResponse
 from typing import List
-from core.celery import send_registration_email
+from tasks import send_registration_email
 
 user_route = APIRouter()
 

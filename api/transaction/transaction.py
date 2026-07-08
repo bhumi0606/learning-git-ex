@@ -1,5 +1,5 @@
 from fastapi import APIRouter, Depends, HTTPException, Query
-from core.celery import send_transaction_email
+from tasks import send_transaction_email
 from services.transaction.transaction_service import deposit_service, withdraw_service, transfer_service, get_transactions_service
 from schemas.database_model import get_session
 from fastapi import Request
