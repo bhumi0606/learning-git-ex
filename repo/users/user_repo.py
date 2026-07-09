@@ -1,33 +1,33 @@
 from schemas.database_model import User,Role
 
-def add_user(user,session):
+async def add_user(user,session):
     u = User(
         name = user.name,
         email = user.email,
         password = user.password,
         role = user.role
     )
-    session.add(u)
-    session.commit()
+    await session.add(u)
+    await session.commit()
     return "user created."
 
-def update_user(email,u,session):
+async def update_user(email,u,session):
     user = session.query(User).filter_by(email=email).one_or_none()
     if user:
         if u.name:
             user.name = u.name
-        session.commit()
+        await session.commit()
         return "user updated."
 
-def delete_user(email,session):
+async def delete_user(email,session):
     user = session.query(User).filter_by(email=email).one_or_none()
     if user:
-        session.delete(user)
-        session.commit()
+        await session.delete(user)
+        await session.commit()
         return "user deleted."
     
-def show_users(username,sort_query,search_by,filter_by,session):
-    query = session.query(User)
+async def show_users(username,sort_query,search_by,filter_by,session):
+    query = await session.query(User)
     if sort_query:
         if sort_query == "username":
             query = query.order_by(User.name)
@@ -59,10 +59,10 @@ def show_users(username,sort_query,search_by,filter_by,session):
     users = query.all()
     return users
 
-def show_user(email,session):
-    user = session.query(User).filter_by(email=email).one_or_none()
+async def show_user(email,session):
+    user = await session.query(User).filter_by(email=email).one_or_none()
     return user
 
-def get_user_by_id(id,session):
-    user = session.query(User).filter_by(id=id).one_or_none()
+async def get_user_by_id(id,session):
+    user = await session.query(User).filter_by(id=id).one_or_none()
     return user

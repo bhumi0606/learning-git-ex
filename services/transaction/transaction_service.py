@@ -2,32 +2,32 @@ from repo.transaction.transaction_repo import deposit, withdraw, transfer, get_t
 from repo.accounts.account_repo import check_balance, get_account_by_userid, get_account 
 from repo.users.user_repo import show_user
 
-def deposit_service(email,amount,description,session):
+async def deposit_service(email,amount,description,session):
     try:
-        user = show_user(email,session)
+        user = await show_user(email,session)
         if amount > 0:
-            balance = deposit(user.id,amount,description,session)
+            balance = await deposit(user.id,amount,description,session)
             print(balance)
             return balance
     except Exception as e:
         raise Exception(str(e))
 
-def withdraw_service(email,amount,description,session):
+async def withdraw_service(email,amount,description,session):
     try:
-        user = show_user(email,session)
-        acc = check_balance(user.id,session)
+        user = await show_user(email,session)
+        acc = await check_balance(user.id,session)
         if amount < acc.balance:
             balance = withdraw(user.id,amount,description,session)
             return balance
     except Exception as e:
         raise Exception(str(e))
 
-def transfer_service(email,to_account,amount,description,session):
+async def transfer_service(email,to_account,amount,description,session):
     try:
-        user = show_user(email,session)
-        from_account = get_account_by_userid(user.id,session)
-        to_account = get_account(to_account,session)
-        balance = check_balance(user.id,session)
+        user = await show_user(email,session)
+        from_account = await get_account_by_userid(user.id,session)
+        to_account = await get_account(to_account,session)
+        balance = await check_balance(user.id,session)
         if not from_account:
             return "sender account not found"
         if not to_account:
@@ -39,9 +39,9 @@ def transfer_service(email,to_account,amount,description,session):
     except Exception as e:
         raise Exception(str(e))
 
-def get_transactions_service(sort_by,search_by,filter_by,max_amount,min_amount,session):
+async def get_transactions_service(sort_by,search_by,filter_by,max_amount,min_amount,session):
     try:
-        transactions = get_transaction(sort_by,search_by,filter_by,max_amount,min_amount,session)
+        transactions = await get_transaction(sort_by,search_by,filter_by,max_amount,min_amount,session)
         if transactions:
             return transactions
     except Exception as e:

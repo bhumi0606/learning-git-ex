@@ -8,9 +8,9 @@ password_context = CryptContext(
     deprecated="auto"
 )
 
-def get_access_token_service(email,password,session):
+async def get_access_token_service(email,password,session):
     try:
-        user = show_user(email,session)
+        user = await show_user(email,session)
         if user and password_context.verify(password,user.password):
             data = user_schemas.TokenData(
                 email = email,
@@ -21,50 +21,50 @@ def get_access_token_service(email,password,session):
     except Exception as e:
         raise Exception(str(e))
 
-def create_user_service(user,session):
+async def create_user_service(user,session):
     try:
         user.password = password_context.hash(user.password)
-        msg = add_user(user,session)
+        msg = await add_user(user,session)
         if msg:
             return msg
     except Exception as e:
         raise Exception(str(e))
     
-def update_user_service(email,user,session):
+async def update_user_service(email,user,session):
     try:
-        msg = update_user(email,user,session)
+        msg = await update_user(email,user,session)
         if msg:
             return msg
     except Exception as e:
         raise Exception(str(e))
 
-def delete_user_service(email,session):
+async def delete_user_service(email,session):
     try:
-        msg = delete_user(email,session)
+        msg = await delete_user(email,session)
         if msg:
             return msg
     except Exception as e:
         raise Exception(str(e))
 
-def get_users_service(username,sort_query,search_by,filter_by,session):
+async def get_users_service(username,sort_query,search_by,filter_by,session):
     try:
-        users = show_users(username,sort_query,search_by,filter_by,session)
+        users = await show_users(username,sort_query,search_by,filter_by,session)
         if users:
             return users
     except Exception as e:
         raise Exception(str(e))
 
-def get_user_service(email,session):
+async def get_user_service(email,session):
     try:
-        user = show_user(email,session)
+        user = await show_user(email,session)
         if user:
             return user
     except Exception as e:
         raise Exception(str(e))
 
-def get_user_by_id_service(id,session):
+async def get_user_by_id_service(id,session):
     try:
-        user = get_user_by_id(id,session)
+        user = await get_user_by_id(id,session)
         if user:
             return user
     except Exception as e:

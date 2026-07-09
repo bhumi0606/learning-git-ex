@@ -11,16 +11,17 @@ from typing import Optional
 from schemas.users.users_responseModel import UserResponse
 from typing import List
 from tasks import send_registration_email
+from sqlalchemy.ext.asyncio import AsyncSession
 
 user_route = APIRouter()
 
 @user_route.post('/user/login',status_code=200)
 @limiter.limit('3/day')
 @logging_decorator
-def login(request:Request,user:OAuth2PasswordRequestForm=Depends(),session=Depends(get_session)):
+async def login(request:Request,user:OAuth2PasswordRequestForm=Depends(),session:AsyncSession=Depends(get_session)):
     email = user.username
     password = user.password
-    token = get_access_token_service(email,password,session)
+    token = await get_access_token_service(email,password,session)
     if token:
         return {
             'access_token': token,
@@ -39,8 +40,8 @@ def get_refresh_token(token:str):
     raise HTTPException(status_code=404,detail='invalid token')
     
 @user_route.post('/user/create',status_code=201)
-def create_user(user:user_schemas.CreateUser,session=Depends(get_session)):
-    result = create_user_service(user,session)
+async def create_user(user:user_schemas.CreateUser,session:AsyncSession=Depends(get_session)):
+    result = await create_user_service(user,session)
     if result:
         task = send_registration_email.delay(user.email)
         return {
@@ -50,21 +51,21 @@ def create_user(user:user_schemas.CreateUser,session=Depends(get_session)):
     raise HTTPException(status_code=404,detail='user not created.')
     
 @user_route.put('/user/update',status_code=200)
-def update_user(request:Request,user:user_schemas.UpdateUser,user_role=Depends(user_require),session=Depends(get_session)):
+async def update_user(request:Request,user:user_schemas.UpdateUser,user_role=Depends(user_require),session:AsyncSession=Depends(get_session)):
     data = request.state.current_user
     email = data.get('email')
-    return update_user_service(email,user,session)
+    return await update_user_service(email,user,session)
     
 
 @user_route.delete('/user/delete',status_code=200)
-def delete_user(request:Request,user=Depends(admin_require),session=Depends(get_session)):
+async def delete_user(request:Request,user=Depends(admin_require),session:AsyncSession=Depends(get_session)):
     data = request.state.current_user
     email = data.get('email')
-    return delete_user_service(email,session)
+    return await delete_user_service(email,session)
     
 
 @user_route.get('/user',response_model=List[UserResponse],status_code=200)
-def get_users(
+async def get_users(
         request:Request,
         username = Query(
             default=None,
@@ -82,12 +83,12 @@ def get_users(
             default = None,
             description = "filter by role"
         ),
-        session = Depends(get_session)
+        session:AsyncSession = Depends(get_session)
     ):
     # data = request.state.current_user
     # print(data.get('email'))
     # print(data.get('role'))
-    user = get_users_service(username,sort_query,search_by,filter_by,session)
+    user = await get_users_service(username,sort_query,search_by,filter_by,session)
     if user:
         return user
     raise HTTPException(status_code=404,detail='user not found.')

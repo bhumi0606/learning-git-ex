@@ -3,21 +3,22 @@ from tasks import send_transaction_email
 from services.transaction.transaction_service import deposit_service, withdraw_service, transfer_service, get_transactions_service
 from schemas.database_model import get_session
 from fastapi import Request
+from sqlalchemy.ext.asyncio import AsyncSession
 
 transaction_route = APIRouter()
 
 @transaction_route.get('/transaction/deposit')
-def deposit(
+async def deposit(
             request:Request,
             amount:int,
             description=Query(
                 default = None
             ),
-            session=Depends(get_session)):
+            session:AsyncSession=Depends(get_session)):
     data = request.state.current_user
     email = data.get('email')
     # email = "bhumikprajapati2608@gmail.com"
-    balance = deposit_service(email,amount,description,session)
+    balance = await deposit_service(email,amount,description,session)
     if balance:
         task = send_transaction_email.delay(email,"credited",amount)
         return {
@@ -27,17 +28,17 @@ def deposit(
     raise HTTPException(status_code=404,detail='account not found.')
     
 @transaction_route.post('/transaction/withdraw')
-def withdraw(
+async def withdraw(
             request:Request,
             amount:int,
             description = Query(
                 default = None
             ),
-            session=Depends(get_session)):
+            session:AsyncSession=Depends(get_session)):
     data = request.state.current_user
     email = data.get('email')
     # email = "bhumikprajapati2608@gmail.com"
-    balance = withdraw_service(email,amount,description,session)
+    balance = await withdraw_service(email,amount,description,session)
     if balance:
         task = send_transaction_email.delay(email,"debited",amount)
         return {
@@ -46,18 +47,18 @@ def withdraw(
     raise HTTPException(status_code=404,detail='account not found.')
       
 @transaction_route.post('/transaction/transfer')
-def transfer(
+async def transfer(
         request:Request,
         to_account:str,
         amount:int,
         description = Query(
             default = None
         ),
-        session=Depends(get_session)):
+        session:AsyncSession=Depends(get_session)):
     data = request.state.current_user
     email = data.get('email')
     # email = "bhumikprajapati2608@gmail.com"
-    msg = transfer_service(email,to_account,amount,description,session)
+    msg = await transfer_service(email,to_account,amount,description,session)
     print(msg)
     if msg == "transaction completed.":
         task = send_transaction_email.delay(email,"debited",amount)
@@ -68,7 +69,7 @@ def transfer(
 
 
 @transaction_route.get('/transactions')
-def get_transaction(
+async def get_transaction(
         request:Request,
         sort_by = Query(
             default = None,
@@ -90,9 +91,9 @@ def get_transaction(
             default = None,
             description = "min transaction amount"
         ),
-        session=Depends(get_session)
+        session:AsyncSession=Depends(get_session)
     ):
-    transactions = get_transactions_service(sort_by,search_by,filter_by,max_amount,min_amount,session)
+    transactions = await get_transactions_service(sort_by,search_by,filter_by,max_amount,min_amount,session)
     if transactions:
         return transactions
     raise HTTPException(status_code=404,detail="transaction not found")

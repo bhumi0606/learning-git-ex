@@ -1,39 +1,39 @@
 from schemas.database_model import Account,Type
 
-def create_account(account,session):
+async def create_account(account,session):
     acc = Account(
         user_id = account.user_id,
         account_number = account.account_number,
         account_type = account.account_type,
         balance = account.balance
     )
-    session.add(acc)
-    session.commit()
+    await session.add(acc)
+    await session.commit()
     return "account created"
 
-def delete_account(id,session):
+async def delete_account(id,session):
     acc = session.query(Account).filter_by(id=id).one_or_none()
-    session.delete(acc)
-    session.commit()    
+    await session.delete(acc)
+    await session.commit()    
     return "account deleted"
 
-def check_balance(user_id,session):
-    acc = session.query(Account).filter_by(user_id=user_id).one_or_none()
+async def check_balance(user_id,session):
+    acc = await session.query(Account).filter_by(user_id=user_id).one_or_none()
     return acc
 
 
-def get_account(acc_no,session):
-    acc = session.query(Account).filter_by(account_number=acc_no).one_or_none()
+async def get_account(acc_no,session):
+    acc = await session.query(Account).filter_by(account_number=acc_no).one_or_none()
     if acc:
         return acc.account_number
     return None
 
-def get_account_by_userid(user_id,session):
-    acc = session.query(Account.account_number).filter_by(user_id=user_id).one_or_none()
+async def get_account_by_userid(user_id,session):
+    acc = await session.query(Account.account_number).filter_by(user_id=user_id).one_or_none()
     return acc[0]
 
-def get_accounts(sort_by,search,filter_by,max_balance,min_balance,session):
-    query = session.query(Account)
+async def get_accounts(sort_by,search,filter_by,max_balance,min_balance,session):
+    query = await session.query(Account)
     if max_balance:
         query = query.filter(Account.balance <= max_balance)
     if min_balance:

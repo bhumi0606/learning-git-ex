@@ -17,7 +17,7 @@ celery_app.conf.beat_schedule = {
         "task": "tasks.hello",
         "schedule": crontab(minute="*"),
     },
-    "generate-dailt-report":{
+    "generate-daily-report":{
         "task": "tasks.daily_transaction_report",
         "schedule": crontab(hour=0,minute=0),
     },

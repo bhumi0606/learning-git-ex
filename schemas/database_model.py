@@ -1,15 +1,14 @@
-from sqlalchemy import create_engine
+from sqlalchemy.ext.asyncio import create_async_engine, async_sessionmaker
 from sqlalchemy.orm import declarative_base
 from sqlalchemy.orm import mapped_column
 from sqlalchemy import Integer, String, ForeignKey
 import enum
 from sqlalchemy import Enum
 from core.config import DATABASE_URL
-from sqlalchemy.orm import sessionmaker
 from datetime import datetime
 from sqlalchemy import DateTime
 
-engine = create_engine(DATABASE_URL)
+engine = create_async_engine(DATABASE_URL)
 Base = declarative_base()
 
 class Role(enum.Enum):
@@ -57,11 +56,8 @@ class Transaction(Base):
     description = mapped_column(String(length=50))
 
 
-Session = sessionmaker(bind=engine)
+Session = async_sessionmaker(bind=engine)
 
-def get_session():
-    session = Session()
-    try:
+async def get_session():
+    async with Session() as session:
         yield session
-    finally:
-        session.close()
